@@ -70,9 +70,20 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+           {
+            type: 'docSidebar',
+            sidebarId: 'authorSidebar',
+            position: 'left',
+            label: 'About Us',
+          },
           {
             href: 'https://github.com/sf-ranjan',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://deepranjan.bigowl.co.in',
+            label: 'Author',
             position: 'right',
           },
         ],
