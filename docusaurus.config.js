@@ -12,7 +12,7 @@ const config = {
   url: 'https://sf-ranjan.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/my-docs/',
+  baseUrl: '/',
   deploymentBranch: 'gh-pages',
 
   // GitHub pages deployment config.
