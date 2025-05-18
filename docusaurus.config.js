@@ -1,4 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -39,12 +41,25 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          routeBasePath: '/blog',
+          feedOptions: {
+            type:['rss', 'atom'],
+            xslt: true
+          },
+          onInlineTags:'warn',
+          onInlineAuthors:'warn',
+          onUntruncatedBlogPosts:'warn',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.        
+          },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -66,16 +81,17 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Documentation',
-          },
-           {
-            type: 'docSidebar',
             sidebarId: 'authorSidebar',
             position: 'left',
             label: 'About Us',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Documentation',
+          },
+          { to: "/blog", label: "Blog", position: "left" },
           {
             href: 'https://github.com/sf-ranjan',
             label: 'GitHub',
@@ -92,7 +108,7 @@ const config = {
         style: 'dark',
         links: [
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} BigOwl Consulting`
+        copyright: `© ${new Date().getFullYear()} BigOwl and other contributors`
       },
       prism: {
         theme: prismThemes.github,
@@ -101,6 +117,14 @@ const config = {
       },
     }),
     stylesheets: ["https://fonts.googleapis.com/icon?family=Material+Icons"],
+      stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+',
+      crossorigin: 'anonymous',
+    }],
      themes: [
     // ... Your other themes.
     [

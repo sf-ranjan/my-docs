@@ -1,23 +1,11 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+deep:
+  name: Deep Ranjan
+  title: Front End Engineer
+  url: https://github.com/sf_ranjan
+  image_url: https://lh3.googleusercontent.com/ogw/AF2bZyi2b8Qc5zr4sGX3e-EVfAHBvKnfnQz9TQ06E6zjg7DeHfs=s64-c-mo
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    x: sf_ranjan
+    github: sf-ranjan
+    linkedin: sf-ranjan
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com

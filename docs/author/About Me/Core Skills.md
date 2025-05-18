@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 ---
-# Salesforce Core Skills
+# Core Skills
 
 - **CRM Customization:** Tailoring Salesforce to meet unique business needs using custom objects, fields, and page layouts.
 - **Process Automation:** Building workflows, process builders, and flows to automate business processes.
