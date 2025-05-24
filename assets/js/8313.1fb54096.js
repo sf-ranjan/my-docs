@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbigowl_site=self.webpackChunkbigowl_site||[]).push([[8313],{694:(e,s,c)=>{c.d(s,{createPacketServices:()=>i.$});var i=c(9923);c(3579)}}]);

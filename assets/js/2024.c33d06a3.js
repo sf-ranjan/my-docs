@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbigowl_site=self.webpackChunkbigowl_site||[]).push([[2024],{2024:(e,s,c)=>{c.d(s,{createArchitectureServices:()=>i.S});var i=c(8815);c(3579)}}]);
