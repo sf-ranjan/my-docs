@@ -2,7 +2,7 @@
 slug: first-blog-post
 title: First Blog Post
 authors: [deep]
-tags: [hola, docusaurus]
+tags: [hola]
 ---
 
 Lorem ipsum dolor sit amet...

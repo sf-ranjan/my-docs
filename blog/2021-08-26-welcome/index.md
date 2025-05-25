@@ -2,10 +2,8 @@
 slug: welcome
 title: Welcome
 authors: deep
-tags: [facebook, hello, docusaurus]
+tags: [Salesforce, Github]
 ---
-
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
 
 Here are a few tips you might find useful.
 
@@ -21,8 +19,6 @@ The blog post date can be extracted from filenames, such as:
 - `2019-05-30-welcome/index.md`
 
 A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
 
 The blog supports tags as well!
 
