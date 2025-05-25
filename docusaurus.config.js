@@ -120,6 +120,13 @@ const config = {
 				additionalLanguages: ["latex"],
 			},
 		}),
+	stylesheets: [
+		{
+			href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+			type: "text/css",
+			rel: "stylesheet",
+		},
+	],
 	stylesheets: ["https://fonts.googleapis.com/icon?family=Material+Icons"],
 	stylesheets: [
 		{
