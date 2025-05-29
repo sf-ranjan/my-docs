@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sf-ranjan.github.io/blog</id>
     <title>Welcome to BigOwl Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2025-05-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sf-ranjan.github.io/blog"/>
     <subtitle>Welcome to BigOwl Blog</subtitle>
@@ -11,85 +11,212 @@
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://sf-ranjan.github.io/blog/welcome</id>
         <link href="https://sf-ranjan.github.io/blog/welcome"/>
-        <updated>2021-08-26T00:00:00.000Z</updated>
+        <updated>2025-05-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Here are a few tips you might find useful.]]></summary>
-        <content type="html"><![CDATA[<p>Here are a few tips you might find useful.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
-<ul>
-<li><code>2019-05-30-welcome.md</code></li>
-<li><code>2019-05-30-welcome/index.md</code></li>
-</ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
+        <content type="html"><![CDATA[<p>Here are a few tips you might find useful.</p>]]></content>
         <author>
             <name>Deep Ranjan</name>
             <uri>https://github.com/sf_ranjan</uri>
         </author>
         <category label="Salesforce" term="Salesforce"/>
-        <category label="Github" term="Github"/>
+        <category label="GitHub" term="GitHub"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>https://sf-ranjan.github.io/blog/mdx-blog-post</id>
-        <link href="https://sf-ranjan.github.io/blog/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
+        <title type="html"><![CDATA[JWT Bearer Flow in Salesforce]]></title>
+        <id>https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce</id>
+        <link href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce"/>
+        <updated>2025-05-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>Integrating external applications with Salesforce often requires secure, seamless authentication. The JWT Bearer Flow is a robust OAuth 2.0 mechanism that enables server-to-server integration without direct user interaction. In this comprehensive guide, you'll learn how to set up JWT authentication for Salesforce, generate the necessary keys and certificates, configure a Connected App, and test the flow using Postman. Instructions are provided for both Windows and macOS environments.</p>
+<h2></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h2>
+<p>Before you begin, ensure you have:</p>
+<ul>
+<li>A Salesforce account with permissions to create Connected Apps.</li>
+<li><a href="https://www.postman.com/downloads/" target="_blank" rel="noopener noreferrer">Postman</a> installed.</li>
+<li><a href="https://www.openssl.org/" target="_blank" rel="noopener noreferrer">OpenSSL</a> installed for generating keys and certificates.</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>On <strong>Windows</strong>, you may need to set the <code>OPENSSL_CONF</code> environment variable to point to your OpenSSL configuration file.<br>
+<!-- -->On <strong>macOS</strong>, OpenSSL is typically pre-installed, but you can update it via <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">Homebrew</a> if needed.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-generate-a-private-key-and-x509-certificate">Step 1: Generate a Private Key and X.509 Certificate<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-1-generate-a-private-key-and-x509-certificate" class="hash-link" aria-label="Direct link to Step 1: Generate a Private Key and X.509 Certificate" title="Direct link to Step 1: Generate a Private Key and X.509 Certificate">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-install-openssl">1.1 Install OpenSSL<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#11-install-openssl" class="hash-link" aria-label="Direct link to 1.1 Install OpenSSL" title="Direct link to 1.1 Install OpenSSL">​</a></h3>
+<ul>
+<li>
+<p><strong>Windows:</strong> Download and install OpenSSL from the <a href="https://slproweb.com/products/Win32OpenSSL.html" target="_blank" rel="noopener noreferrer">official site</a>.</p>
+</li>
+<li>
+<p><strong>macOS:</strong> Install via Homebrew:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">brew install openssl</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-generate-an-rsa-private-key">1.2 Generate an RSA Private Key<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#12-generate-an-rsa-private-key" class="hash-link" aria-label="Direct link to 1.2 Generate an RSA Private Key" title="Direct link to 1.2 Generate an RSA Private Key">​</a></h3>
+<ul>
+<li>
+<p><strong>Windows:</strong></p>
+<div class="language-cmd codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cmd codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\openssl.cfg</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>macOS:</strong></p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-an-unencrypted-key-file">1.3 Create an Unencrypted Key File<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#13-create-an-unencrypted-key-file" class="hash-link" aria-label="Direct link to 1.3 Create an Unencrypted Key File" title="Direct link to 1.3 Create an Unencrypted Key File">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl rsa -passin pass:x -in server.pass.key -out server.key</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="14-generate-a-certificate-signing-request-csr">1.4 Generate a Certificate Signing Request (CSR)<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#14-generate-a-certificate-signing-request-csr" class="hash-link" aria-label="Direct link to 1.4 Generate a Certificate Signing Request (CSR)" title="Direct link to 1.4 Generate a Certificate Signing Request (CSR)">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl req -new -key server.key -out server.csr</span><br></span></code></pre></div></div>
+<p>You will be prompted for organization details. Fill them as appropriate.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="15-generate-the-self-signed-certificate">1.5 Generate the Self-Signed Certificate<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#15-generate-the-self-signed-certificate" class="hash-link" aria-label="Direct link to 1.5 Generate the Self-Signed Certificate" title="Direct link to 1.5 Generate the Self-Signed Certificate">​</a></h3>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl x509 -req -sha256 -days 365 -in server.csr -signkey server.key -out server.crt</span><br></span></code></pre></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The <code>server.key</code> (private key) and <code>server.crt</code> (certificate) files are required for the next steps. Keep your private key secure.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-create-a-jwt-connected-app-in-salesforce">Step 2: Create a JWT Connected App in Salesforce<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-2-create-a-jwt-connected-app-in-salesforce" class="hash-link" aria-label="Direct link to Step 2: Create a JWT Connected App in Salesforce" title="Direct link to Step 2: Create a JWT Connected App in Salesforce">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="21-navigate-to-setup">2.1 Navigate to Setup<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#21-navigate-to-setup" class="hash-link" aria-label="Direct link to 2.1 Navigate to Setup" title="Direct link to 2.1 Navigate to Setup">​</a></h3>
+<ol>
+<li>Log in to Salesforce.</li>
+<li>Click the gear icon and select <strong>Setup</strong>.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="22-create-a-new-connected-app">2.2 Create a New Connected App<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#22-create-a-new-connected-app" class="hash-link" aria-label="Direct link to 2.2 Create a New Connected App" title="Direct link to 2.2 Create a New Connected App">​</a></h3>
+<ol>
+<li>In the Quick Find box, search for <strong>App Manager</strong> and open it.</li>
+<li>Click <strong>New Connected App</strong>.</li>
+<li>Fill in the required fields:<!-- -->
+<ul>
+<li><strong>Connected App Name:</strong> (e.g., JWT Integration)</li>
+<li><strong>API Name:</strong> (auto-filled)</li>
+<li><strong>Contact Email:</strong> (your email)</li>
+</ul>
+</li>
+<li>Under <strong>API (Enable OAuth Settings)</strong>:<!-- -->
+<ul>
+<li>Check <strong>Enable OAuth Settings</strong>.</li>
+<li>Set <strong>Callback URL</strong> to <code>http://localhost:1717/OauthRedirect</code>.</li>
+<li>Check <strong>Use Digital Signatures</strong> and upload your <code>server.crt</code> file.</li>
+<li>Select OAuth Scopes:<!-- -->
+<ul>
+<li><code>api</code></li>
+<li><code>refresh_token, offline_access</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>After saving, Salesforce may take a few minutes to propagate your Connected App settings.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="23-note-client-id-and-secret">2.3 Note Client ID and Secret<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#23-note-client-id-and-secret" class="hash-link" aria-label="Direct link to 2.3 Note Client ID and Secret" title="Direct link to 2.3 Note Client ID and Secret">​</a></h3>
+<ul>
+<li>After saving, copy the <strong>Consumer Key</strong> (Client ID) and <strong>Consumer Secret</strong> from the app detail page.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3-approve-the-connected-app">Step 3: Approve the Connected App<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-3-approve-the-connected-app" class="hash-link" aria-label="Direct link to Step 3: Approve the Connected App" title="Direct link to Step 3: Approve the Connected App">​</a></h2>
+<ol>
+<li>In <strong>Setup</strong>, search for <strong>Manage Connected Apps</strong>.</li>
+<li>Click on your Connected App.</li>
+<li>Click <strong>Edit Policies</strong>.</li>
+<li>Under <strong>OAuth Policies</strong>, set <strong>Permitted Users</strong> to <strong>Admin approved users are pre-authorized</strong>.</li>
+<li>Save your changes.</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>If this step is skipped, authentication requests may fail with insufficient permissions.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-create-a-jwt-token">Step 4: Create a JWT Token<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-4-create-a-jwt-token" class="hash-link" aria-label="Direct link to Step 4: Create a JWT Token" title="Direct link to Step 4: Create a JWT Token">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-structure-the-jwt">4.1 Structure the JWT<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#41-structure-the-jwt" class="hash-link" aria-label="Direct link to 4.1 Structure the JWT" title="Direct link to 4.1 Structure the JWT">​</a></h3>
+<p>A JWT consists of three parts: Header, Payload, and Signature.</p>
+<ul>
+<li>
+<p><strong>Header:</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	</span><span class="token property" style="color:#36acaa">"alg"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"RS256"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>Payload:</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"iss"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Your_Client_ID"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"sub"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"user@example.com"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// Salesforce username</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"aud"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"https://login.salesforce.com"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"exp"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> &lt;Current Unix Timestamp + </span><span class="token number" style="color:#36acaa">120</span><span class="token plain">&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+<ul>
+<li><code>iss</code>: Consumer Key from Salesforce.</li>
+<li><code>sub</code>: Salesforce username to impersonate.</li>
+<li><code>aud</code>: Use <code>https://login.salesforce.com</code> for production, or <code>https://test.salesforce.com</code> for sandbox.</li>
+<li><code>exp</code>: Expiration time (in seconds since epoch).</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You can use <a href="https://jwt.io/" target="_blank" rel="noopener noreferrer">jwt.io</a> to construct and sign your JWT. Use your <code>server.key</code> as the private key.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-5-obtain-an-access-token-using-postman">Step 5: Obtain an Access Token Using Postman<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-5-obtain-an-access-token-using-postman" class="hash-link" aria-label="Direct link to Step 5: Obtain an Access Token Using Postman" title="Direct link to Step 5: Obtain an Access Token Using Postman">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="51-configure-the-request">5.1 Configure the Request<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#51-configure-the-request" class="hash-link" aria-label="Direct link to 5.1 Configure the Request" title="Direct link to 5.1 Configure the Request">​</a></h3>
+<ol>
+<li>
+<p>Open Postman and create a new <strong>POST</strong> request.</p>
+</li>
+<li>
+<p>Set the URL to:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://login.salesforce.com/services/oauth2/token</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="52-set-up-the-body">5.2 Set Up the Body<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#52-set-up-the-body" class="hash-link" aria-label="Direct link to 5.2 Set Up the Body" title="Direct link to 5.2 Set Up the Body">​</a></h3>
+<ul>
+<li>
+<p>Select <strong>x-www-form-urlencoded</strong>.</p>
+</li>
+<li>
+<p>Add the following key-value pairs:</p>
+<table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>grant_type</td><td>urn:ietf:params:oauth:grant-type<!-- -->:jwt-bearer</td></tr><tr><td>assertion</td><td>(Paste your generated JWT token here)</td></tr></tbody></table>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="53-send-the-request">5.3 Send the Request<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#53-send-the-request" class="hash-link" aria-label="Direct link to 5.3 Send the Request" title="Direct link to 5.3 Send the Request">​</a></h3>
+<ul>
+<li>Click <strong>Send</strong>.</li>
+<li>If successful, you'll receive a JSON response containing an <code>access_token</code>.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>If you receive an error, double-check your JWT structure, signature, and ensure the Connected App is properly configured and approved.</p></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-6-use-the-access-token">Step 6: Use the Access Token<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#step-6-use-the-access-token" class="hash-link" aria-label="Direct link to Step 6: Use the Access Token" title="Direct link to Step 6: Use the Access Token">​</a></h2>
+<p>With the access token, you can now make authenticated API requests to Salesforce.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="61-example-fetch-accounts">6.1 Example: Fetch Accounts<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#61-example-fetch-accounts" class="hash-link" aria-label="Direct link to 6.1 Example: Fetch Accounts" title="Direct link to 6.1 Example: Fetch Accounts">​</a></h3>
+<ol>
+<li>
+<p>Create a new <strong>GET</strong> request in Postman.</p>
+</li>
+<li>
+<p>Set the URL to:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://yourInstance.salesforce.com/services/data/vXX.X/sobjects/Account/</span><br></span></code></pre></div></div>
+<p>Replace <code>yourInstance</code> and <code>vXX.X</code> with your Salesforce instance and API version.</p>
+</li>
+<li>
+<p>In the <strong>Headers</strong> tab, add:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Authorization: Bearer &lt;your_access_token&gt;</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p>Click <strong>Send</strong> to execute the request.</p>
+</li>
+</ol>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://sf-ranjan.github.io/blog/jwt-bearer-flow-salesforce#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>You have now set up secure, server-to-server integration with Salesforce using the JWT Bearer Flow. This approach is ideal for backend services and automated integrations, providing robust security without requiring user interaction. If you encounter issues, review each step carefully and consult Salesforce documentation for troubleshooting.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>For production deployments, always safeguard your private keys and restrict access to your Connected App.</p></div></div>]]></content>
+        <author>
+            <name>Deep Ranjan</name>
+            <uri>https://github.com/sf_ranjan</uri>
+        </author>
+        <category label="Salesforce" term="Salesforce"/>
+        <category label="JWT" term="JWT"/>
+        <category label="OAuth" term="OAuth"/>
+        <category label="API" term="API"/>
+        <category label="Integration" term="Integration"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[React Blog Post]]></title>
+        <id>https://sf-ranjan.github.io/blog/React-blog-post</id>
+        <link href="https://sf-ranjan.github.io/blog/React-blog-post"/>
+        <updated>2024-08-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Use the power of React to create interactive blog posts.]]></summary>
         <content type="html"><![CDATA[<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p></div></div>
 <!-- -->
 <p>For example, use JSX to create an interactive button:</p>
-<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"button clicked!"</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">"button clicked!"</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 <button>Click me!</button>]]></content>
         <author>
             <name>Deep Ranjan</name>
             <uri>https://github.com/sf_ranjan</uri>
         </author>
         <category label="Salesforce" term="Salesforce"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Long Blog Post]]></title>
-        <id>https://sf-ranjan.github.io/blog/long-blog-post</id>
-        <link href="https://sf-ranjan.github.io/blog/long-blog-post"/>
-        <updated>2019-05-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
-        <content type="html"><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Deep Ranjan</name>
-            <uri>https://github.com/sf_ranjan</uri>
-        </author>
-        <category label="Hello" term="Hello"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://sf-ranjan.github.io/blog/first-blog-post</id>
-        <link href="https://sf-ranjan.github.io/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet...]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Deep Ranjan</name>
-            <uri>https://github.com/sf_ranjan</uri>
-        </author>
-        <category label="Hola" term="Hola"/>
     </entry>
 </feed>
