@@ -32,3 +32,9 @@
 .mermaid {
 	text-align: center;
 }
+
+table {
+	display: table;
+	width: initial;
+	margin: 0 auto;
+}
