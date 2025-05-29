@@ -18,7 +18,7 @@ Let’s break down this definition to better understand what a project is—and 
 
 ## Project Characteristics
 
-Projects also have clearly defined:
+Projects also have clearly defined elements:
 
 ### Objectives
 
@@ -36,16 +36,15 @@ This is the planned budget for the project, covering both human and physical res
 
 Projects have a planned timeline for completion, including key milestones along the way.
 
----
-
 ### Examples of Projects
+
+:::note[**Examples**]
 
 - Building a house
 - Developing a mobile application
 - Launching a new product
 - Improving a service (e.g., customer service, Six Sigma initiative)
-
----
+  :::
 
 ## Projects vs. Processes
 
