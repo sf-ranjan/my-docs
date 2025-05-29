@@ -92,6 +92,7 @@ const config = {
 						sidebarId: "tutorialSidebar",
 						position: "left",
 						label: "Documentation",
+						collapsed: true,
 					},
 					{ to: "/blog", label: "Blog", position: "left" },
 					{

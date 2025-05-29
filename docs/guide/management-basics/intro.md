@@ -1,55 +1,64 @@
 ---
 sidebar_position: 1
 title: Get Started
-description: Create a doc page with rich content.
+description: Introduction to projects and processes in organizations.
 ---
 
 :::info[**DEFINITION**]
 
-According to the Project Management Institute: **"A project is a temporary endeavor undertaken to create a unique product, service, or result.**"
+According to the Project Management Institute: **"A project is a temporary endeavor undertaken to create a unique product, service, or result."**
 
 :::
 
-Let's break down above definition into its components to understand further what a project is (and what it is not):
+Let’s break down this definition to better understand what a project is—and what it is not:
 
-It is a temporary endeavor - what does that mean? It means that it isn't endless; it has a start date and an end date. Projects do not go on indefinitely. Activities that go on indefinitely are typically known as processes or operations.
+- **Temporary endeavor:** Projects have a defined start and end date. They do not continue indefinitely. Ongoing activities are typically called processes or operations.
+- **Unique deliverable:** Every project aims to create something unique—a product, service, or result. While projects may be similar, no two are exactly the same. This uniqueness distinguishes projects from processes, which are repeatable and focus on consistency and standardization.
+- **Deliverable:** The outcome of a project could be a new product, a building, a merger, or an improved service. The key is that there is a tangible result.
 
-It creates a unique product, service, or result, which we call deliverable.
-Unique means that it is unlike any other project. It may be similar to other projects but it is never identical to one. This is what distiguishes a project from process. A project is unique; a process is a repeatable and strives for consistency, standardization, and no deviation from standards.
-Deliverable means that it has a outcome: i.e. a new product, a new building, a merger of two companies, improved customer service, etc. The outcome may be a product, goods, or a service.
+## Project Characteristics
 
-Furthermore, projects have defined...
+Projects also have clearly defined:
 
 ### Objectives
 
-The goals expected to be achieved. There can be technical goals (develop new technology), legal or political goals (to meet governmental regulations), and/or business goals (beating or eliminating competition). These objectives should be measurable.
+Projects are driven by specific goals, which may be technical (e.g., developing new technology), legal or political (e.g., meeting regulations), or business-related (e.g., outperforming competitors). These objectives should be measurable.
 
 ### Scope
 
-All the work required to deliver the product or result and satisfy the objectives for which a project was undertaken at a level of quality expected by the customer. The scope includes all the deliverables required to meet the project objectives.
+Scope includes all the work required to deliver the project’s result and meet its objectives at the expected level of quality. It defines what is included—and what is not.
 
 ### Cost
 
-The planned cost of conducting the project; it includes human and physical resources.
+This is the planned budget for the project, covering both human and physical resources.
 
-### Time/Schedule
+### Time-Schedule
 
-The planned time to complete the project, as well as the Milestones along the way.
+Projects have a planned timeline for completion, including key milestones along the way.
 
-### Some Examples of Projects
+---
+
+### Examples of Projects
 
 - Building a house
-- Building a mobile application
-- Developing a new product
-- Improvement of a service (i.e. customer service, Six Sigma initiative)
+- Developing a mobile application
+- Launching a new product
+- Improving a service (e.g., customer service, Six Sigma initiative)
 
-**Now that we've introduced the definition of a project, let's discuss some of the differences between projects and processes (or operations)**
+---
 
-- Let say I'm working in the project department in a company of the renewable energy industry. In my company we will call it a project while the PV plants or Wind farms are under construction.
-- As defined in the PMBOK Guide, it is temporary and it will deliver a unique product. Once we start producing and selling energy, the responsibility is transferred to the operations team who is will make sure that everything is running smoothly and consistently, according to the procedures already implemented in the company.
+## Projects vs. Processes
 
-### Projects and Processes in Disaster Management
+Projects are temporary and unique, while processes (or operations) are ongoing and repeatable.
 
-- Let's say an agency responsible for coordinating mitigation, response and recovery activities for several countries. The agency receives funding for mitigation initiatives or projects- These have specific objectives, timelines and scope. For example, projects can be geared towards improving Early Warning Systems or making schools safer (objectives). These projects can last anywhere between one year and 10 years (timeline) and the scope for implementation varies from one or two countries to all eighteen countries which fall under the agency.
+For example, in a renewable energy company, constructing a PV plant or wind farm is considered a project—it is temporary and delivers a unique outcome. Once the plant is operational, responsibility shifts to the operations team, whose job is to ensure smooth, consistent functioning according to established procedures. This ongoing work is a process.
 
-- On the other hand, the agency has several internal processes which help its effectiveness. A key example would be monitoring and reporting using specialized software. This helps management staff to be aware of how other departments are performing and gives insight as to how the agency can improve on its operations. This happens on a continuous basis.
+## Projects and Processes in Disaster Management
+
+Consider an agency coordinating disaster mitigation, response, and recovery across several countries. The agency may receive funding for specific projects, such as improving early warning systems or making schools safer. These projects have defined objectives, timelines, and scope, and may last from one to ten years.
+
+At the same time, the agency runs internal processes, such as monitoring and reporting using specialized software. These processes help management track performance and identify areas for improvement. Unlike projects, these activities are continuous.
+
+:::tip[**Summary**]
+In summary, projects are temporary efforts with unique outcomes, while processes are ongoing activities focused on consistency and efficiency.
+:::
