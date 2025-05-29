@@ -3,8 +3,6 @@ sidebar_position: 2
 title: Project Management
 ---
 
-# What is Project Management?
-
 Project Management consists of the methods and tools used to deliver a project that meets its stated objectives. At first glance, this may seem straightforward. Objectives typically represent themselves in terms of cost, time, and scope (also known as the Triple Constraint). As long as we know the objectives, we should be able to meet them, right? It may come as a surprise to you, but often times projects fail to meet their objectives. It isn't so simple because the number of factors that must be controlled can, and often do, interact in unexpected ways. Consequently, the project becomes more complicated as the number of factors increases.
 
 Projects are encountered in various aspects of life, such as remodeling a home, developing a new product at work, or pursuing an academic degree. Each scenario requires careful oversight of key factors:

@@ -1,9 +1,7 @@
 ---
 sidebar_position: 3
-title: Project Lifecycle
+title: Project Life cycle
 ---
-
-# Project Lifecycle
 
 Every project, no matter its size or industry, progresses through a series of well-defined stages called the **Project Lifecycle**: **Initiation, Planning, Execution**, and **Closure**. Recognizing and following these phases helps teams manage projects systematically and achieve desired results.
 
