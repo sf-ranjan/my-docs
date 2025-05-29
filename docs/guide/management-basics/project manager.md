@@ -50,6 +50,8 @@ These demands require Project Managers to be versatile leaders, skilled communic
 |               |       Balances scope, schedule, cost, risk, and quality       | Ensures quality, cost, and deadlines for departmental deliverables |
 |               |           Manages project resources and technology            |      Manages employee performance and departmental resources       |
 
+---
+
 :::tip[**Summary**]
 
 Project Managers are essential for driving projects to successful completion, balancing technical requirements with strong leadership and communication skills. While Functional Managers focus on optimizing their specific departments, Project Managers integrate talent from across the organization to achieve unique project goals. The ability to manage risks, resolve conflicts, and motivate diverse teams distinguishes effective Project Managers and is critical to organizational success.
