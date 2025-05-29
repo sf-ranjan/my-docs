@@ -17,3 +17,33 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+Salesforce:
+  label: Salesforce
+  permalink: /salesforce
+  description: Salesforce tag description
+
+jwt:
+  label: JWT
+  permalink: /jwt
+  description: JWT tag description
+
+oauth:
+  label: OAuth
+  permalink: /oauth
+  description: OAuth tag description
+
+api:
+  label: API
+  permalink: /api
+  description: API tag description
+
+integration:
+  label: Integration
+  permalink: /integration
+  description: Integration tag description
+
+Github:
+  label: GitHub
+  permalink: /github
+  description: GitHub tag description
