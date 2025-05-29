@@ -3,35 +3,106 @@ sidebar_position: 3
 title: Project Lifecycle
 ---
 
-# What is the Project Life Cycle?
+# Project Lifecycle
 
-As we mentioned earlier, all projects have a start and an end. Another way to acknowledge this is to say that all projects follow a life cycle of phases: Initiation, Planning, Execution and Closure.
-Our goal will be to review and explain how the project is managed throughout these life cycle phases.The concept of a "life cycle" is prevalent in today's business and technology climates. This concept has been applied to the development of most new products, especially software products. Also implicit in a "life cycle," is the notion of phases or stages that are completed in a specific order through the "life" of the project. Each project may go through the same "life cycle" phases, even though each project outcome will be unique. Projects begin with Initiation by defining the goals and objectives to be achieved. In Planning, the details of the project are identified as well as how the project will be carried out in order to meet the objectives. In Execution, the Project Plan is monitored and controlled to ensure that the actual work being delivered meets the planned scope, cost, and schedule. And lastly, the project is Closed where all deliverables are turned over the customer, and all project activities are completed. Project Closing also includes a post project review, complete with a collection of lessons learned, best practices, and improvements that can be made to the Project Management methods and tools for improved performance on future projects in the organization. During each life cycle phase, there are specific deliverables expected to be produced. These deliverables are based upon the project objectives and the ultimate project result. For example, if the project is to build a house, at the end of the Planning Phase it would be expected to have design blueprints for the house as well as a contract with a builder to build the house. During Execution, it would be expected that there would be interim key deliverables such as, the completion of the foundation, the completion of the framing, the completion of the roof, the completion of the walls, the completion of electrical and plumbing, and so forth. These deliverables are produced over the “life” of the project and are key to meeting the overall project goal of a beautiful new home. We will explore the entire Project Life Cycle together, beginning with Initiation and finishing with Project Closing.
+Every project, no matter its size or industry, progresses through a series of well-defined stages called the **Project Lifecycle**: **Initiation, Planning, Execution**, and **Closure**. Recognizing and following these phases helps teams manage projects systematically and achieve desired results.
 
-## Project Life Cycle Phases
+The project lifecycle serves as a roadmap, dividing the work into clear, manageable phases. Each phase has its own goals, deliverables, and tasks. Although every project produces different outcomes, the lifecycle structure remains the same, offering a reliable framework for project management.
 
-The Project Manager and project team have one shared goal: to carry out the work of the project for the purpose of meeting the project's objectives. A standard project typically has the following major phases: Initiation, Planning, Execution (including monitoring and control), and Closure. Taken together, these phases represent the path a project takes from the beginning to its end and are generally referred to as the project "life cycle." The project life cycle described below is what is known as a Predictive Project Life Cycle.
+:::info[**Example:**]  
+Imagine you are building a new mobile app. The project will start by defining what the app should do (Initiation), planning how to build it (Planning), actually developing and testing the app (Execution), and finally launching it and wrapping up the project (Closure).
+:::
 
-<p style={{textAlign: 'center'}}><img src="/img/Project_Life_Cycle_graphic.png" alt="Alt Text" width="600" height="350"></img></p>
+## Project Lifecycle Phases
 
+The four main phases of a typical project lifecycle.
+:::tip
+
+### Predictive Project Life Cycle
+
+(also known as a "Waterfall" or "plan-driven" life cycle) is a project management approach where the project’s scope, schedule, and cost are determined early in the project, and most planning is done upfront. In this model, the project progresses through a series of sequential phases—such as Initiation, Planning, Execution, and Closure—with each phase completed before the next begins.
+
+<p style={{textAlign: 'center'}}><img src="/img/Project_Life_Cycle_graphic.png" alt="Project Life Cycle Graphic" width="600" height="350"></img></p>
 <p style={{textAlign: 'center'}}><b>Typical Cost and Staffing Levels Across a Generic Project Life Cycle Structure</b></p>
+This approach works best when requirements are well understood and unlikely to change, as it emphasizes careful planning, documentation, and control. Changes are managed through formal processes, and progress is measured against the original plan. Predictive life cycles are commonly used in construction, manufacturing, and other industries where deliverables and processes are clearly defined from the start.
+:::
 
-### Initiation Phase
+---
 
-During the first of these phases, the Initiation Phase, the project objective or need is identified; this can be a business problem or opportunity that must be solved. The Project Manager is assigned. The project purpose, objectives and high level requirements are identified and captured in a Project Charter. This includes identifying the project Stakeholders and understanding their role in the project. The Project Charter serves as the basis for the approval of the project to move into the Planning Phase.
+### 1. Initiation Phase
 
-### Planning Phase
+**Objective:** Define the project’s purpose, objectives, and stakeholders, and determine if the project should proceed.
 
-The next phase, the Planning Phase, is where the project solution is further developed in as much detail as possible and the steps necessary to meet the project's objective are planned. In this phase, the team identifies all of the work to be done. The project's activities and resource requirements are identified, along with the strategy for producing them. This is also referred to as "scope management." A Project Plan is created outlining the activities, dependencies, and timeframes. The Project Manager coordinates the preparation of a project budget by providing cost estimates for the labor, equipment, and materials costs. The budget is used to monitor and control cost expenditures during Project Execution.
+- Identify the business need, problem, or opportunity the project addresses.
+- Analyze the feasibility and potential benefits of the project.
+- Identify key stakeholders and clarify their roles and expectations.
+- Assign a Project Manager to lead the effort.
 
-Once the project team has identified the work, prepared the schedule, and estimated the costs, the three fundamental components of the planning process are complete. This is an excellent time to identify and try to deal with anything that might pose a threat to the successful completion of the project. This is called risk management. In risk management, "high-threat" potential problems are identified along with the action that is to be taken on each high-threat potential problem, either to reduce the probability that the problem will occur or to reduce the impact on the project if it does occur. This is also the time to document all project Stakeholders and establish a Communication Plan describing the information needed and the delivery method to be used to keep the Stakeholders informed. You will want to document your Resource Plan to identify the materials, supplies, services, and personnel required to ensure a successful project. The Resource Plan includes a Team Plan that documents the availability of the team and how you will create a positive team environment. You will also want to include a Procurement Plan if you plan to procure services or materials. Finally, you will want to document a Quality Plan, providing quality targets, assurance, and control measures, along with an Acceptance Plan, listing the criteria to be met to gain customer acceptance. At this point, the project would have been planned in detail and is ready to be executed.
+:::tip[**Project Charter**]
+A **Project Charter** is a formal document that authorizes the start of a project. It outlines the project’s objectives, scope, key stakeholders, high-level requirements, initial risks, constraints, assumptions, and the roles and responsibilities of the project team. The Project Charter provides a clear direction and serves as a reference throughout the project, ensuring everyone understands the project’s purpose and what success looks like. It is typically approved by project sponsors or senior management, giving the project manager the authority to allocate resources and begin project work.
+:::
 
-### Execution Phase (Including monitoring and control)
+- Develop a **Project Charter** that outlines:
+  - Project objectives and high-level requirements
+  - Scope and boundaries
+  - Key stakeholders and their responsibilities
+  - Initial risks, constraints, and assumptions
+  - Success criteria and alignment with organizational goals
+  - Obtain formal approval or authorization to move forward.
 
-During the third phase, the Execution Phase, the project plan is put into motion and the work of the project is performed. It is important to maintain control and communicate as needed during Execution. Progress is continuously monitored and appropriate adjustments are made and recorded as variances from the original plan. In any project, a Project Manager spends most of the time in this phase. During project execution, people are carrying out the activities, and progress information is being reported through regular team meetings. The Project Manager uses this information to maintain control over the direction of the project by comparing the progress reports with the project plan to measure the performance of the project activities and take corrective action as needed. The first course of action should always be to bring the project back on course (i.e., to return it to the original plan). If that cannot happen, the team should record variations from the original plan, and record and publish modifications to the plan. Throughout this step, Project Sponsors and other key Stakeholders should be kept informed of the project's status according to the agreed-on frequency and format of communication.
+:::info[**Example:**]  
+For the mobile app, the Initiation Phase involves researching the market to confirm user demand, defining the app’s main features and goals, identifying stakeholders (such as users, sponsors, and developers), and assigning a project manager. The team then creates a Project Charter to document these details and secures approval to begin planning.
+:::
 
-Status reports should always emphasize the anticipated end point in terms of cost, schedule, and quality of deliverables. Each project deliverable produced should be reviewed for quality and measured against the acceptance criteria. Once all of the deliverables have been produced and the customer has accepted the final solution, the project is ready for Closure.
+### 2. Planning Phase
 
-### Closing phase
+**Objective:** Develop a detailed roadmap for achieving the project’s objectives.
 
-During the final Closure Phase, or Completion Phase, the emphasis is on releasing the final deliverables to the customer, handing over project documentation to the business, terminating supplier contracts, releasing and reassigning project resources to other work or projects, and communicating the closure of the project to all Stakeholders. The last remaining step is to conduct lessons-learned studies in a post project review to examine what went well and what didn't. Through this type of analysis, the wisdom of experience is transferred back to the project organization, which will help future project teams.
+- Identify all tasks and resources required.
+- Create a **Project Plan** with activities, dependencies, and timelines.
+- Prepare a **budget** and identify risks.
+- Develop supporting plans:
+  - **Resource Plan:** Who will do the work?
+  - **Communication Plan:** How will stakeholders be kept informed?
+  - **Quality Plan:** How will quality be measured?
+  - **Procurement Plan:** What needs to be purchased?
+  - **Acceptance Plan:** What criteria must be met for success?
+
+:::info[**Example:**]
+The team creates wireframes, sets a timeline for development, estimates costs, identifies potential risks (like technology changes), and plans how to communicate progress to stakeholders.
+:::
+
+### 3. Execution Phase (Including Monitoring and Control)
+
+**Objective:** Deliver the project according to the plan, while continuously monitoring progress, managing resources, and making adjustments as needed to ensure successful completion.
+
+- Execute the tasks and activities defined in the project plan, coordinating team members and resources.
+- Monitor progress against the schedule, budget, and quality standards using key performance indicators (KPIs) and regular status meetings.
+- Track and manage project risks, issues, and changes through established processes (such as change requests and risk registers).
+- Communicate status updates, milestones, and any deviations from the plan to stakeholders, ensuring transparency and alignment.
+- Manage procurement and vendor relationships, ensuring that external deliverables are received on time and meet requirements.
+- Ensure deliverables are produced according to quality and acceptance criteria, conducting reviews, inspections, and testing as needed.
+- Adjust plans, schedules, and resource allocations in response to unforeseen challenges or opportunities, maintaining focus on project objectives.
+
+:::info[**Example:**]
+During the Execution Phase of the mobile app project, developers write code and integrate features, testers validate functionality, and designers refine the user interface. The project manager monitors progress using project management tools, holds regular stand-up meetings, and updates the project schedule as tasks are completed or delayed. If a critical bug is discovered, the team assesses its impact, updates the risk register, and communicates the issue and mitigation plan to stakeholders. Procurement activities, such as purchasing third-party APIs or design assets, are managed to ensure timely delivery. Throughout, the team ensures that each feature meets the defined quality standards before moving to the next stage.
+:::
+
+### 4. Closure Phase
+
+**Objective:** Complete the project and transfer deliverables to the customer.
+
+- Release final deliverables.
+- Handover documentation.
+- Release project resources.
+- Close contracts with suppliers.
+- Conduct a **post-project review** to capture lessons learned and best practices.
+
+:::info[**Example:**]  
+The app is launched, documentation is handed over to the support team, contracts with vendors are closed, and the team meets to discuss what went well and what could be improved for future projects.
+:::
+
+:::tip[**Summary**]
+
+The Project Lifecycle provides a clear roadmap for managing projects from start to finish. By following the four key phases—Initiation, Planning, Execution, and Closure—project teams can ensure that objectives are met, risks are managed, and valuable lessons are captured for future improvement. Using guided examples, such as building a mobile app, helps illustrate how these phases apply in real-world scenarios, making the process easier to understand and implement.
+:::
