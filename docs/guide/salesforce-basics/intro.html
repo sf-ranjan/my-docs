@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-guide/salesforce-basics/intro" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.0">
+<title data-rh="true">Salesforce Cookbook | Welcome to BigOwl</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sf-ranjan.github.io/img/Copy_of_BigOwl_Logo.png"><meta data-rh="true" name="twitter:image" content="https://sf-ranjan.github.io/img/Copy_of_BigOwl_Logo.png"><meta data-rh="true" property="og:url" content="https://sf-ranjan.github.io/docs/guide/salesforce-basics/intro"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Salesforce Cookbook | Welcome to BigOwl"><meta data-rh="true" name="description" content="Introduction to Salesforce for developers who prefer brevity."><meta data-rh="true" property="og:description" content="Introduction to Salesforce for developers who prefer brevity."><link data-rh="true" rel="icon" href="/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://sf-ranjan.github.io/docs/guide/salesforce-basics/intro"><link data-rh="true" rel="alternate" href="https://sf-ranjan.github.io/docs/guide/salesforce-basics/intro" hreflang="en"><link data-rh="true" rel="alternate" href="https://sf-ranjan.github.io/docs/guide/salesforce-basics/intro" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Salesforce Basics","item":"https://sf-ranjan.github.io/docs/category/salesforce-basics"},{"@type":"ListItem","position":2,"name":"Salesforce Cookbook","item":"https://sf-ranjan.github.io/docs/guide/salesforce-basics/intro"}]}</script><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Welcome to BigOwl RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Welcome to BigOwl Atom Feed">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.37d1804b.css">
+<script src="/assets/js/runtime~main.62a7cb00.js" defer="defer"></script>
+<script src="/assets/js/main.590d6ea5.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/BigOwlLogo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/BigOwlLogo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/BigOwlLogo.svg" alt="Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/docs/category/about-us">About Us</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/category/salesforce-basics">Documentation</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/sf-ranjan" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><a href="https://deepranjan.bigowl.co.in" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Author<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/salesforce-basics">Salesforce Basics</a><button aria-label="Collapse sidebar category &#x27;Salesforce Basics&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/guide/salesforce-basics/intro">Salesforce Cookbook</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/project-management">Project Management</a><button aria-label="Expand sidebar category &#x27;Project Management&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/salesforce-basics"><span>Salesforce Basics</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Salesforce Cookbook</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Salesforce Cookbook</h1></header><ul>
+<li><strong>Salesforce</strong> is a <em>Platform as a Service (PaaS)</em> and <em>Software as a Service (SaaS)</em> provider.</li>
+<li><strong>Salesforce is not</strong> an Infrastructure as a Service (IaaS) provider.</li>
+<li><strong>Force.com</strong> is a PaaS offered by Salesforce for building platform applications.</li>
+<li>Salesforce uses a <strong>multitenant architecture</strong>: multiple tenants share a single instance of the application, environment, hardware, or storage.</li>
+<li>Salesforce generates <strong>18-digit case-insensitive External IDs</strong> and <strong>15-digit case-sensitive Record IDs</strong>.</li>
+<li>Convert 15-digit case-sensitive record IDs to 18-digit case-insensitive IDs using the <code>CASESAFEID()</code> formula function.</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use <code>CASESAFEID()</code> to safely reference record IDs in integrations and formulas.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="user-licenses">User Licenses<a href="#user-licenses" class="hash-link" aria-label="Direct link to User Licenses" title="Direct link to User Licenses">​</a></h2>
+<ul>
+<li>Every user must be assigned a <strong>user license</strong> to access Salesforce. The license determines the features available to the user.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-user-licenses">Types of User Licenses<a href="#types-of-user-licenses" class="hash-link" aria-label="Direct link to Types of User Licenses" title="Direct link to Types of User Licenses">​</a></h3>
+<ul>
+<li><strong>Login-Based User Licenses</strong>
+<ul>
+<li><em>Lightning Platform Starter</em></li>
+<li><em>Lightning Platform Plus</em></li>
+<li><em>Salesforce Platform Login</em></li>
+</ul>
+</li>
+<li><strong>Based on Job Function</strong>
+<ul>
+<li><em>Lightning Platform user license</em>: Standard object permissions for accounts and contacts (not cases).</li>
+<li><em>Salesforce user license</em>: Full access to standard CRM apps and objects (accounts, contacts, cases).</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Salesforce packages licenses in SKUs (stock-keeping units). SKUs may contain one or more licenses and capabilities.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="queue-in-salesforce">Queue in Salesforce<a href="#queue-in-salesforce" class="hash-link" aria-label="Direct link to Queue in Salesforce" title="Direct link to Queue in Salesforce">​</a></h2>
+<ul>
+<li>A <strong>queue</strong> is a group of users sharing workload.</li>
+<li>Records assigned to a queue must be accepted by a user to become the record’s owner.</li>
+<li>Ownership can be transferred to another queue user or any other user.</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>When transferring a record, ensure the new user has a Salesforce license assigned.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="permission-set">Permission Set<a href="#permission-set" class="hash-link" aria-label="Direct link to Permission Set" title="Direct link to Permission Set">​</a></h2>
+<ul>
+<li>Up to <strong>1000 permission sets</strong> can be created per org.</li>
+<li>Used to enhance access levels.</li>
+<li>To assign a permission set, the user must have a Salesforce license.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="permission-set-group">Permission Set Group<a href="#permission-set-group" class="hash-link" aria-label="Direct link to Permission Set Group" title="Direct link to Permission Set Group">​</a></h3>
+<ul>
+<li>Bundle permission sets together based on job function.</li>
+<li>Includes all permissions from the grouped sets.</li>
+<li><strong>Muting</strong> is possible to restrict specific permissions within a group.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="users-in-salesforce">Users in Salesforce<a href="#users-in-salesforce" class="hash-link" aria-label="Direct link to Users in Salesforce" title="Direct link to Users in Salesforce">​</a></h2>
+<ul>
+<li>Every user must have a Salesforce license and a profile.</li>
+<li>Users cannot be deleted, but can be <strong>Activated</strong>, <strong>Deactivated</strong>, or <strong>Frozen</strong>.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="frozen-user">Frozen User<a href="#frozen-user" class="hash-link" aria-label="Direct link to Frozen User" title="Direct link to Frozen User">​</a></h3>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Freezing a user suspends their login access without deactivating their license.</p></div></div>
+<p><strong>Scenarios where freezing is useful:</strong></p>
+<ul>
+<li>User is default owner of leads/cases.</li>
+<li>User is a workflow user or recipient.</li>
+<li>User is a customer portal admin.</li>
+<li>User is selected in a custom hierarchy field.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Freezing does <strong>not</strong> release the license. Deactivating a user does.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deactivated-user">Deactivated User<a href="#deactivated-user" class="hash-link" aria-label="Direct link to Deactivated User" title="Direct link to Deactivated User">​</a></h3>
+<ul>
+<li>Deactivated users cannot log in or participate in workflows.</li>
+<li>Their licenses become available for reassignment.</li>
+<li>Manually shared records and team access are lost.</li>
+<li>Data can be transferred to other users.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="organization-wide-default-owd">Organization-Wide Default (OWD)<a href="#organization-wide-default-owd" class="hash-link" aria-label="Direct link to Organization-Wide Default (OWD)" title="Direct link to Organization-Wide Default (OWD)">​</a></h2>
+<ul>
+<li>Sets baseline access to data not owned by the user.</li>
+<li>Can be set for custom and some standard objects.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="access-levels">Access Levels<a href="#access-levels" class="hash-link" aria-label="Direct link to Access Levels" title="Direct link to Access Levels">​</a></h3>
+<ul>
+<li><strong>Public Read/Write</strong>: All users can see and edit every record.</li>
+<li><strong>Public Read-Only</strong>: All users can see every record.</li>
+<li><strong>Private</strong>: Users can only see records they own.</li>
+<li><strong>Public Read/Write/Transfer</strong>: Only for Lead and Case objects.</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Enable &quot;Manual User Record Sharing&quot; to allow users to share their records.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sharing-model">Sharing Model<a href="#sharing-model" class="hash-link" aria-label="Direct link to Sharing Model" title="Direct link to Sharing Model">​</a></h2>
+<ul>
+<li>Sharing rules can be set for every standard and custom object.</li>
+<li>Used to create exceptions to OWD for specific users.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-sharing-mechanisms">Types of Sharing Mechanisms<a href="#types-of-sharing-mechanisms" class="hash-link" aria-label="Direct link to Types of Sharing Mechanisms" title="Direct link to Types of Sharing Mechanisms">​</a></h3>
+<ul>
+<li><strong>Manual Sharing</strong></li>
+<li><strong>Apex Sharing</strong></li>
+<li><strong>Public Groups</strong></li>
+<li><strong>Sharing Rules</strong>
+<ul>
+<li>Criteria-based</li>
+<li>Owner-based</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Sharing rules can only grant wider access, not restrict it.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reports-in-salesforce">Reports in Salesforce<a href="#reports-in-salesforce" class="hash-link" aria-label="Direct link to Reports in Salesforce" title="Direct link to Reports in Salesforce">​</a></h2>
+<p>Salesforce supports four types of reports:</p>
+<ol>
+<li><strong>Tabular</strong>: Data in rows and columns.</li>
+<li><strong>Summary</strong>: Group by rows.</li>
+<li><strong>Matrix</strong>: Group by columns.</li>
+<li><strong>Joined</strong>: Combine multiple report types.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="key-points-regarding-objects">Key Points Regarding Objects<a href="#key-points-regarding-objects" class="hash-link" aria-label="Direct link to Key Points Regarding Objects" title="Direct link to Key Points Regarding Objects">​</a></h2>
+<ul>
+<li>New custom objects have four standard fields:<!-- -->
+<ul>
+<li>Name</li>
+<li>Owner</li>
+<li>Created By</li>
+<li>Last Modified By</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>These fields cannot be deleted.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="relationship-types">Relationship Types<a href="#relationship-types" class="hash-link" aria-label="Direct link to Relationship Types" title="Direct link to Relationship Types">​</a></h2>
+<ul>
+<li>Relationships are created on the child object.</li>
+<li>Two main types:<!-- -->
+<ul>
+<li><strong>One-to-Many</strong></li>
+<li><strong>Many-to-Many</strong> (using Junction objects)</li>
+</ul>
+</li>
+<li>Four categories:<!-- -->
+<ul>
+<li>Lookup</li>
+<li>Master-Detail</li>
+<li>Self</li>
+<li>Hierarchical</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="lookup-relationship">Lookup Relationship<a href="#lookup-relationship" class="hash-link" aria-label="Direct link to Lookup Relationship" title="Direct link to Lookup Relationship">​</a></h3>
+<ul>
+<li><strong>Definition:</strong> Connects two objects (child-parent).</li>
+<li><strong>Purpose:</strong> Retrieve values from related objects.</li>
+<li><strong>Implementation:</strong> Add lookup fields and related lists to page layouts.</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Loosely coupled (deleting parent does not delete child).</li>
+<li>Field references can be null.</li>
+<li>No cascade deletion.</li>
+<li>Sharing/security are independent.</li>
+<li>Max 40 relationships per child object (38 lookup + 2 master-detail).</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="master-detail-relationship">Master-Detail Relationship<a href="#master-detail-relationship" class="hash-link" aria-label="Direct link to Master-Detail Relationship" title="Direct link to Master-Detail Relationship">​</a></h3>
+<ul>
+<li>Strong parent-child connection.</li>
+<li>Child inherits parent security; deleting parent deletes children.</li>
+<li>Supports <strong>roll-up summary fields</strong>.</li>
+<li>Owner field on child is set to parent owner.</li>
+<li>No sharing rules/manual sharing/queues on detail side.</li>
+</ul>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Enable &quot;Allow Reparenting&quot; to move child records to different parents.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="field-dependencies">Field Dependencies<a href="#field-dependencies" class="hash-link" aria-label="Direct link to Field Dependencies" title="Direct link to Field Dependencies">​</a></h2>
+<ul>
+<li>Dynamically filter picklist values based on another field (controlling field).</li>
+<li>Controlling field: Standard/custom checkbox or picklist (1–300 values).</li>
+<li>Dependent field: Custom picklist or multi-select picklist.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="field-history-tracking">Field History Tracking<a href="#field-history-tracking" class="hash-link" aria-label="Direct link to Field History Tracking" title="Direct link to Field History Tracking">​</a></h2>
+<ul>
+<li>Enable during object creation.</li>
+<li>Track changes to selected fields (old/new values, date, user).</li>
+<li>Multi-select picklists and large text fields are tracked as edited only.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rollup-summary-field">Rollup-Summary Field<a href="#rollup-summary-field" class="hash-link" aria-label="Direct link to Rollup-Summary Field" title="Direct link to Rollup-Summary Field">​</a></h2>
+<ul>
+<li>Up to <strong>10 roll-up summary fields</strong> per object.</li>
+<li>Available on master object in master-detail relationships.</li>
+<li>Aggregate operations: Sum, Min, Max, Count.</li>
+<li>Can include all or filtered child records.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Some standard relationships (e.g., Account-Opportunity) behave as master-detail for roll-up summaries.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="button-links-and-actions">Button Links and Actions<a href="#button-links-and-actions" class="hash-link" aria-label="Direct link to Button Links and Actions" title="Direct link to Button Links and Actions">​</a></h2>
+<ul>
+<li><strong>Global Action:</strong> Available on home/chatter/object pages (cannot create related records).</li>
+<li><strong>Object-Specific Action:</strong> Related to objects, can create related records.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="recycle-bin-in-salesforce">Recycle Bin in Salesforce<a href="#recycle-bin-in-salesforce" class="hash-link" aria-label="Direct link to Recycle Bin in Salesforce" title="Direct link to Recycle Bin in Salesforce">​</a></h2>
+<ul>
+<li>Records remain for <strong>15 days</strong> in the Recycle Bin.</li>
+<li>Can be restored within this period; after 15 days, records are permanently deleted.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/salesforce-basics"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Salesforce Basics</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/project-management"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Project Management</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#user-licenses" class="table-of-contents__link toc-highlight">User Licenses</a><ul><li><a href="#types-of-user-licenses" class="table-of-contents__link toc-highlight">Types of User Licenses</a></li></ul></li><li><a href="#queue-in-salesforce" class="table-of-contents__link toc-highlight">Queue in Salesforce</a></li><li><a href="#permission-set" class="table-of-contents__link toc-highlight">Permission Set</a><ul><li><a href="#permission-set-group" class="table-of-contents__link toc-highlight">Permission Set Group</a></li></ul></li><li><a href="#users-in-salesforce" class="table-of-contents__link toc-highlight">Users in Salesforce</a><ul><li><a href="#frozen-user" class="table-of-contents__link toc-highlight">Frozen User</a></li><li><a href="#deactivated-user" class="table-of-contents__link toc-highlight">Deactivated User</a></li></ul></li><li><a href="#organization-wide-default-owd" class="table-of-contents__link toc-highlight">Organization-Wide Default (OWD)</a><ul><li><a href="#access-levels" class="table-of-contents__link toc-highlight">Access Levels</a></li></ul></li><li><a href="#sharing-model" class="table-of-contents__link toc-highlight">Sharing Model</a><ul><li><a href="#types-of-sharing-mechanisms" class="table-of-contents__link toc-highlight">Types of Sharing Mechanisms</a></li></ul></li><li><a href="#reports-in-salesforce" class="table-of-contents__link toc-highlight">Reports in Salesforce</a></li><li><a href="#key-points-regarding-objects" class="table-of-contents__link toc-highlight">Key Points Regarding Objects</a></li><li><a href="#relationship-types" class="table-of-contents__link toc-highlight">Relationship Types</a><ul><li><a href="#lookup-relationship" class="table-of-contents__link toc-highlight">Lookup Relationship</a></li><li><a href="#master-detail-relationship" class="table-of-contents__link toc-highlight">Master-Detail Relationship</a></li></ul></li><li><a href="#field-dependencies" class="table-of-contents__link toc-highlight">Field Dependencies</a></li><li><a href="#field-history-tracking" class="table-of-contents__link toc-highlight">Field History Tracking</a></li><li><a href="#rollup-summary-field" class="table-of-contents__link toc-highlight">Rollup-Summary Field</a></li><li><a href="#button-links-and-actions" class="table-of-contents__link toc-highlight">Button Links and Actions</a></li><li><a href="#recycle-bin-in-salesforce" class="table-of-contents__link toc-highlight">Recycle Bin in Salesforce</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 BigOwl and other contributors</div></div></div></footer></div>
+</body>
+</html>
