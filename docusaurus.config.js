@@ -85,7 +85,7 @@ const config = {
 						type: "docSidebar",
 						sidebarId: "authorSidebar",
 						position: "left",
-						label: "About Us",
+						label: "About Me",
 					},
 					{
 						type: "docSidebar",
