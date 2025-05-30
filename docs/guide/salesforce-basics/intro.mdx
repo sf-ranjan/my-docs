@@ -1,0 +1,211 @@
+---
+sidebar_position: 1
+title: Salesforce Cookbook
+description: Introduction to Salesforce for developers who prefer brevity.
+---
+
+- **Salesforce** is a _Platform as a Service (PaaS)_ and _Software as a Service (SaaS)_ provider.
+- **Salesforce is not** an Infrastructure as a Service (IaaS) provider.
+- **Force.com** is a PaaS offered by Salesforce for building platform applications.
+- Salesforce uses a **multitenant architecture**: multiple tenants share a single instance of the application, environment, hardware, or storage.
+- Salesforce generates **18-digit case-insensitive External IDs** and **15-digit case-sensitive Record IDs**.
+- Convert 15-digit case-sensitive record IDs to 18-digit case-insensitive IDs using the `CASESAFEID()` formula function.
+
+:::tip
+Use `CASESAFEID()` to safely reference record IDs in integrations and formulas.
+:::
+
+## User Licenses
+
+- Every user must be assigned a **user license** to access Salesforce. The license determines the features available to the user.
+
+### Types of User Licenses
+
+- **Login-Based User Licenses**
+  - _Lightning Platform Starter_
+  - _Lightning Platform Plus_
+  - _Salesforce Platform Login_
+- **Based on Job Function**
+  - _Lightning Platform user license_: Standard object permissions for accounts and contacts (not cases).
+  - _Salesforce user license_: Full access to standard CRM apps and objects (accounts, contacts, cases).
+
+:::info
+Salesforce packages licenses in SKUs (stock-keeping units). SKUs may contain one or more licenses and capabilities.
+:::
+
+## Queue in Salesforce
+
+- A **queue** is a group of users sharing workload.
+- Records assigned to a queue must be accepted by a user to become the record’s owner.
+- Ownership can be transferred to another queue user or any other user.
+
+:::tip
+When transferring a record, ensure the new user has a Salesforce license assigned.
+:::
+
+## Permission Set
+
+- Up to **1000 permission sets** can be created per org.
+- Used to enhance access levels.
+- To assign a permission set, the user must have a Salesforce license.
+
+### Permission Set Group
+
+- Bundle permission sets together based on job function.
+- Includes all permissions from the grouped sets.
+- **Muting** is possible to restrict specific permissions within a group.
+
+## Users in Salesforce
+
+- Every user must have a Salesforce license and a profile.
+- Users cannot be deleted, but can be **Activated**, **Deactivated**, or **Frozen**.
+
+### Frozen User
+
+:::info
+Freezing a user suspends their login access without deactivating their license.
+:::
+
+**Scenarios where freezing is useful:**
+
+- User is default owner of leads/cases.
+- User is a workflow user or recipient.
+- User is a customer portal admin.
+- User is selected in a custom hierarchy field.
+
+:::warning
+Freezing does **not** release the license. Deactivating a user does.
+:::
+
+### Deactivated User
+
+- Deactivated users cannot log in or participate in workflows.
+- Their licenses become available for reassignment.
+- Manually shared records and team access are lost.
+- Data can be transferred to other users.
+
+## Organization-Wide Default (OWD)
+
+- Sets baseline access to data not owned by the user.
+- Can be set for custom and some standard objects.
+
+### Access Levels
+
+- **Public Read/Write**: All users can see and edit every record.
+- **Public Read-Only**: All users can see every record.
+- **Private**: Users can only see records they own.
+- **Public Read/Write/Transfer**: Only for Lead and Case objects.
+
+:::tip
+Enable "Manual User Record Sharing" to allow users to share their records.
+:::
+
+## Sharing Model
+
+- Sharing rules can be set for every standard and custom object.
+- Used to create exceptions to OWD for specific users.
+
+### Types of Sharing Mechanisms
+
+- **Manual Sharing**
+- **Apex Sharing**
+- **Public Groups**
+- **Sharing Rules**
+  - Criteria-based
+  - Owner-based
+
+:::info
+Sharing rules can only grant wider access, not restrict it.
+:::
+
+## Reports in Salesforce
+
+Salesforce supports four types of reports:
+
+1. **Tabular**: Data in rows and columns.
+2. **Summary**: Group by rows.
+3. **Matrix**: Group by columns.
+4. **Joined**: Combine multiple report types.
+
+## Key Points Regarding Objects
+
+- New custom objects have four standard fields:
+  - Name
+  - Owner
+  - Created By
+  - Last Modified By
+
+:::warning
+These fields cannot be deleted.
+:::
+
+## Relationship Types
+
+- Relationships are created on the child object.
+- Two main types:
+  - **One-to-Many**
+  - **Many-to-Many** (using Junction objects)
+- Four categories:
+  - Lookup
+  - Master-Detail
+  - Self
+  - Hierarchical
+
+### Lookup Relationship
+
+- **Definition:** Connects two objects (child-parent).
+- **Purpose:** Retrieve values from related objects.
+- **Implementation:** Add lookup fields and related lists to page layouts.
+
+**Characteristics:**
+
+- Loosely coupled (deleting parent does not delete child).
+- Field references can be null.
+- No cascade deletion.
+- Sharing/security are independent.
+- Max 40 relationships per child object (38 lookup + 2 master-detail).
+
+### Master-Detail Relationship
+
+- Strong parent-child connection.
+- Child inherits parent security; deleting parent deletes children.
+- Supports **roll-up summary fields**.
+- Owner field on child is set to parent owner.
+- No sharing rules/manual sharing/queues on detail side.
+
+:::tip
+Enable "Allow Reparenting" to move child records to different parents.
+:::
+
+## Field Dependencies
+
+- Dynamically filter picklist values based on another field (controlling field).
+- Controlling field: Standard/custom checkbox or picklist (1–300 values).
+- Dependent field: Custom picklist or multi-select picklist.
+
+## Field History Tracking
+
+- Enable during object creation.
+- Track changes to selected fields (old/new values, date, user).
+- Multi-select picklists and large text fields are tracked as edited only.
+
+## Rollup-Summary Field
+
+- Up to **10 roll-up summary fields** per object.
+- Available on master object in master-detail relationships.
+- Aggregate operations: Sum, Min, Max, Count.
+- Can include all or filtered child records.
+
+:::info
+Some standard relationships (e.g., Account-Opportunity) behave as master-detail for roll-up summaries.
+:::
+
+## Button Links and Actions
+
+- **Global Action:** Available on home/chatter/object pages (cannot create related records).
+- **Object-Specific Action:** Related to objects, can create related records.
+
+## Recycle Bin in Salesforce
+
+- Records remain for **15 days** in the Recycle Bin.
+- Can be restored within this period; after 15 days, records are permanently deleted.
