@@ -1,5 +1,4 @@
 ---
-slug: jwt-bearer-flow-salesforce
 title: JWT Bearer Flow in Salesforce
 authors: [deep]
 tags: [Salesforce, jwt, oauth, api, integration]
