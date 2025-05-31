@@ -30,25 +30,19 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-generate-a-private-key-and-x509-certificate">Step 1: Generate a Private Key and X.509 Certificate<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-1-generate-a-private-key-and-x509-certificate" class="hash-link" aria-label="Direct link to Step 1: Generate a Private Key and X.509 Certificate" title="Direct link to Step 1: Generate a Private Key and X.509 Certificate">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-install-openssl">1.1 Install OpenSSL<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#11-install-openssl" class="hash-link" aria-label="Direct link to 1.1 Install OpenSSL" title="Direct link to 1.1 Install OpenSSL">​</a></h3>
 <ul>
-<li>
-<p><strong>Windows:</strong> Download and install OpenSSL from the <a href="https://slproweb.com/products/Win32OpenSSL.html" target="_blank" rel="noopener noreferrer">official site</a>.</p>
-</li>
-<li>
-<p><strong>macOS:</strong> Install via Homebrew:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">brew install openssl</span><br></span></code></pre></div></div>
-</li>
+<li><strong>Windows:</strong> Download and install OpenSSL from the <a href="https://slproweb.com/products/Win32OpenSSL.html" target="_blank" rel="noopener noreferrer">official site</a>.</li>
+<li><strong>macOS:</strong> Install via Homebrew:</li>
 </ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">brew install openssl</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-generate-an-rsa-private-key">1.2 Generate an RSA Private Key<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#12-generate-an-rsa-private-key" class="hash-link" aria-label="Direct link to 1.2 Generate an RSA Private Key" title="Direct link to 1.2 Generate an RSA Private Key">​</a></h3>
 <ul>
-<li>
-<p><strong>Windows:</strong></p>
-<div class="language-cmd codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cmd codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\openssl.cfg</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p><strong>macOS:</strong></p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
-</li>
+<li><strong>Windows:</strong></li>
 </ul>
+<div class="language-cmd codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cmd codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\openssl.cfg openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
+<ul>
+<li><strong>macOS:</strong></li>
+</ul>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-an-unencrypted-key-file">1.3 Create an Unencrypted Key File<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#13-create-an-unencrypted-key-file" class="hash-link" aria-label="Direct link to 1.3 Create an Unencrypted Key File" title="Direct link to 1.3 Create an Unencrypted Key File">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl rsa -passin pass:x -in server.pass.key -out server.key</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="14-generate-a-certificate-signing-request-csr">1.4 Generate a Certificate Signing Request (CSR)<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#14-generate-a-certificate-signing-request-csr" class="hash-link" aria-label="Direct link to 1.4 Generate a Certificate Signing Request (CSR)" title="Direct link to 1.4 Generate a Certificate Signing Request (CSR)">​</a></h3>
