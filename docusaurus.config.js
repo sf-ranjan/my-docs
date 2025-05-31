@@ -42,6 +42,15 @@ const config = {
 			"classic",
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
+				gtag: {
+					trackingID: "G-KD8KDXVJ9K",
+					anonymizeIP: true,
+				},
+				sitemap: {
+					changefreq: "weekly",
+					priority: 0.5,
+					filename: "sitemap.xml",
+				},
 				docs: {
 					sidebarPath: "./sidebars.js",
 					remarkPlugins: [remarkMath],
