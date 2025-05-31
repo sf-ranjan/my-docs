@@ -32,24 +32,23 @@ On **macOS**, OpenSSL is typically pre-installed, but you can update it via [Hom
 - **Windows:** Download and install OpenSSL from the [official site](https://slproweb.com/products/Win32OpenSSL.html).
 - **macOS:** Install via Homebrew:
 
-  ```bash
-  brew install openssl
-  ```
+```bash
+brew install openssl
+```
 
 ### 1.2 Generate an RSA Private Key
 
 - **Windows:**
 
-  ```cmd
-  set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\openssl.cfg
-  openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
-  ```
+```cmd
+set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\openssl.cfg openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+```
 
 - **macOS:**
 
-  ```bash
-  openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
-  ```
+```bash
+openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+```
 
 ### 1.3 Create an Unencrypted Key File
 
