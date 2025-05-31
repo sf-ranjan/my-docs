@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbigowl_site=self.webpackChunkbigowl_site||[]).push([[835],{4357:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"About Us","slug":"/category/about-us","permalink":"/docs/category/about-us","sidebar":"authorSidebar","navigation":{"next":{"title":"Intro","permalink":"/docs/author/About Me/Intro"}}}}')}}]);
