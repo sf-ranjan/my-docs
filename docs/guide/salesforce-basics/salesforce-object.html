@@ -12,7 +12,7 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.fa2428ea.css">
-<script src="/assets/js/runtime~main.1335795f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2b71fd61.js" defer="defer"></script>
 <script src="/assets/js/main.e32d5956.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,8 @@
 <li><strong>Definition:</strong> A lookup relationship establishes a connection between two objects, forming a child-parent relationship.</li>
 <li><strong>Purpose:</strong> A lookup relationship enables the retrieval of a value from one object based on the value in another object. It is particularly useful when there is a common data structure between two objects.</li>
 <li><strong>Implementation:</strong> When defining a lookup relationship, you have the option to include a lookup field in the page layouts for the related object. Additionally, you can create a related list on the page layouts of the associated object.</li>
-<li><strong>Characteristic of Lookup Relations</strong>
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="characteristic-of-lookup-relations">Characteristic of Lookup Relations<a href="#characteristic-of-lookup-relations" class="hash-link" aria-label="Direct link to Characteristic of Lookup Relations" title="Direct link to Characteristic of Lookup Relations">​</a></h5>
 <ul>
 <li>Loosely Coupled Objects:</li>
 <li>Two objects can have a relationship without any dependencies. (Deleting the parent object does not delete the child object.)</li>
@@ -65,15 +66,14 @@
 <li>Sharing and security are independent.</li>
 <li>Fields do not need to be displayed in the UI alias page layout.</li>
 </ul>
-</li>
-</ul>
 <div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span><strong>tip</strong></div><div class="admonitionContent_BuS1"><p><strong>Maximum of 40 (38 lookup + 2Master-Detail) relationships can be established per child object.</strong></p></div></div>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="master-detail-relationship">Master-Detail Relationship<a href="#master-detail-relationship" class="hash-link" aria-label="Direct link to Master-Detail Relationship" title="Direct link to Master-Detail Relationship">​</a></h4>
 <ul>
 <li>A master-detail relationship can also be employed to establish a connection between two objects.</li>
 <li>A master-detail relationship establishes a strong connection between the parent and the child.</li>
 <li>Master-detail relationships are analogous to parent-child relationships, where the master represents the parent and the detail represents the child.</li>
-<li>Properties of Mater-Details Relationship<!-- -->
+</ul>
+<h5 class="anchor anchorWithStickyNavbar_LWe7" id="properties-of-mater-details-relationship">Properties of Mater-Details Relationship<a href="#properties-of-mater-details-relationship" class="hash-link" aria-label="Direct link to Properties of Mater-Details Relationship" title="Direct link to Properties of Mater-Details Relationship">​</a></h5>
 <ul>
 <li>The child record inherits the security of the parent, and if the parent is deleted, all associated child records will also be deleted.</li>
 <li>The master object controls certain behaviors of the detail object. For instance, whenever a master object record is deleted, the detail object related to it is also deleted.</li>
@@ -81,8 +81,6 @@
 <li>By default, records cannot be <code>Reparented</code> in master-detail relationships.
 However, administrators can permit child records in <code>master-detail</code> relationships on custom objects to be reparented to different parent records by selecting the Allow <code>Reparenting</code> option in the <code>master-detail</code> relationship definition.</li>
 <li>The <code>Owner</code> field on the detail and Sub-detail records isn’t available and is automatically set to the owner of the master record.</li>
-</ul>
-</li>
 </ul>
 <div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span><strong>tip</strong></div><div class="admonitionContent_BuS1"><ul>
 <li>Custom objects on the detail side of a <code>master-detail</code> relationship can&#x27;t have:<!-- -->
@@ -126,6 +124,6 @@ However, administrators can permit child records in <code>master-detail</code> r
 <ul>
 <li>Records stored in the Recycle Bin will remain accessible for a period of 15 days. You have the option to restore these records during this timeframe.</li>
 <li>After the 15-day period, Salesforce will automatically delete the records from the Recycle Bin.</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/guide/salesforce-basics/intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Get Started</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/guide/salesforce-basics/owd-sharing"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Salesforce OWD and Sharing</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#key-points-regarding-objects-in-salesforce" class="table-of-contents__link toc-highlight">Key Points Regarding Objects in Salesforce</a><ul><li><a href="#relationship-types" class="table-of-contents__link toc-highlight">Relationship Types</a><ul><li><a href="#look-up-relationship" class="table-of-contents__link toc-highlight">Look-up Relationship</a></li><li><a href="#master-detail-relationship" class="table-of-contents__link toc-highlight">Master-Detail Relationship</a></li><li><a href="#field-dependencies" class="table-of-contents__link toc-highlight">Field Dependencies</a></li><li><a href="#field-history-tracking" class="table-of-contents__link toc-highlight">Field History Tracking</a></li><li><a href="#rollup-summary-field" class="table-of-contents__link toc-highlight">Rollup-Summary Field</a></li><li><a href="#button-links-and-action" class="table-of-contents__link toc-highlight">Button Links and Action</a></li><li><a href="#recycle-bin-in-salesforce" class="table-of-contents__link toc-highlight">Recycle Bin In Salesforce</a></li></ul></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 BigOwl and other contributors</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/guide/salesforce-basics/intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Get Started</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/guide/salesforce-basics/owd-sharing"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Salesforce OWD and Sharing</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#key-points-regarding-objects-in-salesforce" class="table-of-contents__link toc-highlight">Key Points Regarding Objects in Salesforce</a><ul><li><a href="#relationship-types" class="table-of-contents__link toc-highlight">Relationship Types</a><ul><li><a href="#look-up-relationship" class="table-of-contents__link toc-highlight">Look-up Relationship</a><ul><li><a href="#characteristic-of-lookup-relations" class="table-of-contents__link toc-highlight">Characteristic of Lookup Relations</a></li></ul></li><li><a href="#master-detail-relationship" class="table-of-contents__link toc-highlight">Master-Detail Relationship</a><ul><li><a href="#properties-of-mater-details-relationship" class="table-of-contents__link toc-highlight">Properties of Mater-Details Relationship</a></li></ul></li><li><a href="#field-dependencies" class="table-of-contents__link toc-highlight">Field Dependencies</a></li><li><a href="#field-history-tracking" class="table-of-contents__link toc-highlight">Field History Tracking</a></li><li><a href="#rollup-summary-field" class="table-of-contents__link toc-highlight">Rollup-Summary Field</a></li><li><a href="#button-links-and-action" class="table-of-contents__link toc-highlight">Button Links and Action</a></li><li><a href="#recycle-bin-in-salesforce" class="table-of-contents__link toc-highlight">Recycle Bin In Salesforce</a></li></ul></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 BigOwl and other contributors</div></div></div></footer></div>
 </body>
 </html>
