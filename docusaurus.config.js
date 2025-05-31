@@ -82,12 +82,12 @@ const config = {
 					src: "img/BigOwlLogo.svg",
 				},
 				items: [
-					{
+					/* {
 						type: "docSidebar",
 						sidebarId: "authorSidebar",
 						position: "left",
 						label: "About Me",
-					},
+					}, */
 					{
 						type: "docSidebar",
 						sidebarId: "tutorialSidebar",
