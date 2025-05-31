@@ -107,9 +107,9 @@ const config = {
 					{ to: "/blog", label: "Blog", position: "left" },
 					{
 						href: "https://deepranjan.bigowl.co.in",
-						label: "Author",
 						position: "right",
-						icon: "rocket",
+						className: "fa-brands fa-dev",
+						"aria-label": "DeepRanjan",
 					},
 				],
 			},
