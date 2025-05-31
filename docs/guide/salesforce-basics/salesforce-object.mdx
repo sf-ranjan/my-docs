@@ -44,13 +44,15 @@ Junction objects are essential for modeling complex data relationships and enabl
 - **Definition:** A lookup relationship establishes a connection between two objects, forming a child-parent relationship.
 - **Purpose:** A lookup relationship enables the retrieval of a value from one object based on the value in another object. It is particularly useful when there is a common data structure between two objects.
 - **Implementation:** When defining a lookup relationship, you have the option to include a lookup field in the page layouts for the related object. Additionally, you can create a related list on the page layouts of the associated object.
-- **Characteristic of Lookup Relations**
-  - Loosely Coupled Objects:
-  - Two objects can have a relationship without any dependencies. (Deleting the parent object does not delete the child object.)
-  - Field references can have null values.
-  - Cascade deletion is not supported. (Deleting records in one object does not affect the other object’s records.)
-  - Sharing and security are independent.
-  - Fields do not need to be displayed in the UI alias page layout.
+
+##### Characteristic of Lookup Relations
+
+- Loosely Coupled Objects:
+- Two objects can have a relationship without any dependencies. (Deleting the parent object does not delete the child object.)
+- Field references can have null values.
+- Cascade deletion is not supported. (Deleting records in one object does not affect the other object’s records.)
+- Sharing and security are independent.
+- Fields do not need to be displayed in the UI alias page layout.
 
 :::danger[**tip**]  
 **Maximum of 40 (38 lookup + 2Master-Detail) relationships can be established per child object.**
@@ -61,13 +63,15 @@ Junction objects are essential for modeling complex data relationships and enabl
 - A master-detail relationship can also be employed to establish a connection between two objects.
 - A master-detail relationship establishes a strong connection between the parent and the child.
 - Master-detail relationships are analogous to parent-child relationships, where the master represents the parent and the detail represents the child.
-- Properties of Mater-Details Relationship
-  - The child record inherits the security of the parent, and if the parent is deleted, all associated child records will also be deleted.
-  - The master object controls certain behaviors of the detail object. For instance, whenever a master object record is deleted, the detail object related to it is also deleted.
-  - `Master-detail` relationships provide additional functionality, such as `Roll-up summary` fields that enable the calculation of data on the parent from the child records.
-  - By default, records cannot be `Reparented` in master-detail relationships.
-    However, administrators can permit child records in `master-detail` relationships on custom objects to be reparented to different parent records by selecting the Allow `Reparenting` option in the `master-detail` relationship definition.
-  - The `Owner` field on the detail and Sub-detail records isn’t available and is automatically set to the owner of the master record.
+
+##### Properties of Mater-Details Relationship
+
+- The child record inherits the security of the parent, and if the parent is deleted, all associated child records will also be deleted.
+- The master object controls certain behaviors of the detail object. For instance, whenever a master object record is deleted, the detail object related to it is also deleted.
+- `Master-detail` relationships provide additional functionality, such as `Roll-up summary` fields that enable the calculation of data on the parent from the child records.
+- By default, records cannot be `Reparented` in master-detail relationships.
+  However, administrators can permit child records in `master-detail` relationships on custom objects to be reparented to different parent records by selecting the Allow `Reparenting` option in the `master-detail` relationship definition.
+- The `Owner` field on the detail and Sub-detail records isn’t available and is automatically set to the owner of the master record.
 
 :::danger[**tip**]
 
