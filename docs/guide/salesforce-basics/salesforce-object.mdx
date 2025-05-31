@@ -1,0 +1,113 @@
+---
+sidebar_position: 2
+title: Salesforce Object
+description: Introduction to Salesforce for developers who prefer brevity.
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+---
+
+## Key Points Regarding Objects in Salesforce
+
+- When creating a new custom object, four standard fields are automatically generated:
+  - `Name`
+  - `Owner`
+  - `Created by`
+  - `Last Modified by`,
+
+:::info
+It is important to note that these fields cannot be deleted.
+:::
+
+### Relationship Types
+
+- The relationship must be extended to the child object, necessitating the creation of a relationships field on the child objects. Salesforce offers two fundamental types of relationships:
+  - **One-to-Many relationships**
+  - **Many-to-Many relationships**
+
+:::tip
+To implement a many-to-many relationship in Salesforce, you use a special type of object called a `Junction Object`. A junction object is a custom object with two relationships, each linking to one of the objects you want to relate. This setup allows each record of one object to be linked to multiple records of the other object, and vice versa.
+
+For example, consider a scenario where you want to associate `Students` and `Courses`. A single student can enroll in multiple courses, and each course can have multiple students. You would create a junction object called `Enrollment` with master-detail relationships to both `Student` and `Course`. This enables you to track which students are enrolled in which courses.
+
+Junction objects are essential for modeling complex data relationships and enable advanced reporting and automation based on the connections between records.
+
+:::
+
+- Relationships in Salesforce are categorized into four types:
+  - `Lookup`
+  - `Master Details`
+  - `Self`
+  - `Hierarchical`
+
+#### Look-up Relationship
+
+- **Definition:** A lookup relationship establishes a connection between two objects, forming a child-parent relationship.
+- **Purpose:** A lookup relationship enables the retrieval of a value from one object based on the value in another object. It is particularly useful when there is a common data structure between two objects.
+- **Implementation:** When defining a lookup relationship, you have the option to include a lookup field in the page layouts for the related object. Additionally, you can create a related list on the page layouts of the associated object.
+- **Characteristic of Lookup Relations**
+  - Loosely Coupled Objects:
+  - Two objects can have a relationship without any dependencies. (Deleting the parent object does not delete the child object.)
+  - Field references can have null values.
+  - Cascade deletion is not supported. (Deleting records in one object does not affect the other object’s records.)
+  - Sharing and security are independent.
+  - Fields do not need to be displayed in the UI alias page layout.
+
+:::danger[**tip**]  
+**Maximum of 40 (38 lookup + 2Master-Detail) relationships can be established per child object.**
+:::
+
+#### Master-Detail Relationship
+
+- A master-detail relationship can also be employed to establish a connection between two objects.
+- A master-detail relationship establishes a strong connection between the parent and the child.
+- Master-detail relationships are analogous to parent-child relationships, where the master represents the parent and the detail represents the child.
+- Properties of Mater-Details Relationship
+  - The child record inherits the security of the parent, and if the parent is deleted, all associated child records will also be deleted.
+  - The master object controls certain behaviors of the detail object. For instance, whenever a master object record is deleted, the detail object related to it is also deleted.
+  - `Master-detail` relationships provide additional functionality, such as `Roll-up summary` fields that enable the calculation of data on the parent from the child records.
+  - By default, records cannot be `Reparented` in master-detail relationships.
+    However, administrators can permit child records in `master-detail` relationships on custom objects to be reparented to different parent records by selecting the Allow `Reparenting` option in the `master-detail` relationship definition.
+  - The `Owner` field on the detail and Sub-detail records isn’t available and is automatically set to the owner of the master record.
+
+:::danger[**tip**]
+
+- Custom objects on the detail side of a `master-detail` relationship can't have:
+  - `Sharing Rules`
+  - `Manual Sharing`
+  - `Queues`
+- These features require the Owner field, which is not available on detail objects in a master-detail relationship.
+  :::
+
+#### Field Dependencies
+
+- Establish a conditional relationship that dynamically filters the values in a `Pick-list` or `multi-select Pick-list` based on the user’s selection in a corresponding field.
+- The field that determines filtering is referred to as the `controlling field`. Standard and custom `checkboxes` and `Pick-lists` with a minimum of one and a maximum of 300 values can serve as controlling fields.
+- The field whose values are filtered is referred to as the `dependent field`. Custom Pick-lists and multi-select Pick-lists can be dependent fields.
+
+#### Field History Tracking
+
+- This feature is enabled during the creation of an Object.
+- This page enables you to select the fields you wish to track on the Positions History related list.
+- Whenever a user modifies any of the selected fields, the corresponding old and new field values are added to the History related list along with the date, time, nature of the change, and the user making the change.
+- Please note that multi-select Pick-lists and large text field values are tracked as edited; their old and new field values are not recorded.
+
+#### Rollup-Summary Field
+
+- You can create upto 10 `roll-up summary` fields per object.
+- `Roll-Up Summary` is a type available in the `Master object` of a `master-detail` relationship.
+- Used to perform aggregate operations on the detail records.
+- It is a formula like read only field that can display the `Sum`, `Min`, or `Max` value or record `Count` of a field in a related list of child records.
+- For limited standard relationships (Account-Opportunity and Opportunity-Product) There is an option to include all records in the roll-up or just records that meet certain criteria.
+- If you examine the field definition, the opportunity to account is a lookup field. However, from a business logic perspective, it functions as a `master-detail` relationship. This means that you can create a `rollup summary` field in the account, and if the account is deleted, the related opportunities will also be deleted.
+
+#### Button Links and Action
+
+**Actions**: There is two types of action
+
+    - Global Action: Its available on home chatter page, objects page. You cannot create a related record
+    - Object Specific Action related to objects and you can create related records.
+
+#### Recycle Bin In Salesforce
+
+- Records stored in the Recycle Bin will remain accessible for a period of 15 days. You have the option to restore these records during this timeframe.
+- After the 15-day period, Salesforce will automatically delete the records from the Recycle Bin.

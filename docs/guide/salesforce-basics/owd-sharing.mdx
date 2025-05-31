@@ -1,0 +1,41 @@
+---
+sidebar_position: 3
+title: Salesforce OWD and Sharing
+description: Introduction to Salesforce for developers who prefer brevity.
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+---
+
+- Organization-wide defaults are a security setting that establishes the baseline access to data and records that are not owned by the user.
+- They are the sole mechanism for restricting access to data in the sharing model.
+- Organization-wide defaults can be defined for both custom objects and several
+  - Access levels:
+    - Public Read/Write (all users can see and edit every record)
+    - Public Read-Only (all users can see every record)
+    - Private (users can only see records that they own)
+    - Public Read/Write/Transfer this applicable only to Lead and Case objects.
+
+:::tip
+In Organization-wide Default section, click “Edit” Select the Manual User Record Sharing checkbox to display the Sharing button on user detail pages, which enables users to share their records with others. Or deselect the checkbox to hide the button, which prevents users from sharing their user records with others.
+:::
+
+## Sharing Model
+
+- You can implement sharing rules for every standard and custom object.
+- This feature is available in the Sharing settings, which are located below the Organization Wide Settings.
+- Use sharing rules to create automatic exceptions to your organization-wide sharing settings for specific sets of users.
+
+:::tip
+
+- Please note that “Roles and Subordinates” includes all users in a role, as well as all users in roles below that role.
+- Sharing rules can only be used to grant wider access to data; they cannot be used to restrict access.
+  :::
+
+### Type Of Sharing Mechanism:
+
+- Manual Sharing
+- Apex Sharing
+- Public Groups
+- Sharing Rules
+  - Criteria based
+  - Owner based sharing.

@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import icon from "@fortawesome/free-brands-svg-icons";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -99,6 +100,7 @@ const config = {
 						href: "https://deepranjan.bigowl.co.in",
 						label: "Author",
 						position: "right",
+						icon: "rocket",
 					},
 				],
 			},
