@@ -47,7 +47,7 @@ const config = {
 					anonymizeIP: true,
 				},
 				googleTagManager: {
-					containerId: "GTM-N365W78X",
+					containerId: "GTM-KWHW69X4",
 				},
 				sitemap: {
 					changefreq: "weekly",
