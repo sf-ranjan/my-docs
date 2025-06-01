@@ -43,7 +43,7 @@ const config = {
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
 				gtag: {
-					trackingID: "G-6SHECS696V",
+					trackingID: "G-KD8KDXVJ9K",
 					anonymizeIP: true,
 				},
 				googleTagManager: {
