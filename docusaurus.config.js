@@ -46,6 +46,9 @@ const config = {
 					trackingID: "G-KD8KDXVJ9K",
 					anonymizeIP: true,
 				},
+				googleTagManager: {
+					containerId: "GTM-N365W78X",
+				},
 				sitemap: {
 					changefreq: "weekly",
 					priority: 0.5,
