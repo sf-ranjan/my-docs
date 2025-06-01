@@ -8,7 +8,7 @@ import icon from "@fortawesome/free-brands-svg-icons";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: "Welcome to BigOwl",
-	tagline: "Furthering the Future of AI",
+	tagline: "For developers who prefer brevity",
 	favicon: "img/favicon.svg",
 
 	// Set the production url of your site here
