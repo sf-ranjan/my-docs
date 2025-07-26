@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://bigowl.info/blog</id>
+    <id>https://bigowl.info/ /my-docs/blog</id>
     <title>Welcome to BigOwl Blog</title>
     <updated>2025-05-29T20:05:35.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://bigowl.info/blog"/>
+    <link rel="alternate" href="https://bigowl.info/ /my-docs/blog"/>
     <subtitle>Welcome to BigOwl Blog</subtitle>
-    <icon>https://bigowl.info/img/favicon.svg</icon>
+    <icon>https://bigowl.info/ /my-docs/img/favicon.svg</icon>
     <entry>
         <title type="html"><![CDATA[JWT Bearer Flow in Salesforce]]></title>
-        <id>https://bigowl.info/blog/authorization-flows/jwt-authorization-flows</id>
-        <link href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows"/>
+        <id>https://bigowl.info/ /my-docs/blog/authorization-flows/jwt-authorization-flows</id>
+        <link href="https://bigowl.info/ /my-docs/blog/authorization-flows/jwt-authorization-flows"/>
         <updated>2025-05-29T20:05:35.000Z</updated>
         <summary type="html"><![CDATA[Introduction]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction">Introduction<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
 <p>Integrating external applications with Salesforce often requires secure, seamless authentication. The JWT Bearer Flow is a robust OAuth 2.0 mechanism that enables server-to-server integration without direct user interaction. In this comprehensive guide, you'll learn how to set up JWT authentication for Salesforce, generate the necessary keys and certificates, configure a Connected App, and test the flow using Postman. Instructions are provided for both Windows and macOS environments.</p>
 <h2></h2>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h2>
 <p>Before you begin, ensure you have:</p>
 <ul>
 <li>A Salesforce account with permissions to create Connected Apps.</li>
@@ -26,14 +26,14 @@
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>On <strong>Windows</strong>, you may need to set the <code>OPENSSL_CONF</code> environment variable to point to your OpenSSL configuration file.<br>
 <!-- -->On <strong>macOS</strong>, OpenSSL is typically pre-installed, but you can update it via <a href="https://brew.sh/" target="_blank" rel="noopener noreferrer">Homebrew</a> if needed.</p></div></div>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-generate-a-private-key-and-x509-certificate">Step 1: Generate a Private Key and X.509 Certificate<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-1-generate-a-private-key-and-x509-certificate" class="hash-link" aria-label="Direct link to Step 1: Generate a Private Key and X.509 Certificate" title="Direct link to Step 1: Generate a Private Key and X.509 Certificate">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-install-openssl">1.1 Install OpenSSL<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#11-install-openssl" class="hash-link" aria-label="Direct link to 1.1 Install OpenSSL" title="Direct link to 1.1 Install OpenSSL">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-generate-a-private-key-and-x509-certificate">Step 1: Generate a Private Key and X.509 Certificate<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-1-generate-a-private-key-and-x509-certificate" class="hash-link" aria-label="Direct link to Step 1: Generate a Private Key and X.509 Certificate" title="Direct link to Step 1: Generate a Private Key and X.509 Certificate">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="11-install-openssl">1.1 Install OpenSSL<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#11-install-openssl" class="hash-link" aria-label="Direct link to 1.1 Install OpenSSL" title="Direct link to 1.1 Install OpenSSL">​</a></h3>
 <ul>
 <li><strong>Windows:</strong> Download and install OpenSSL from the <a href="https://slproweb.com/products/Win32OpenSSL.html" target="_blank" rel="noopener noreferrer">official site</a>.</li>
 <li><strong>macOS:</strong> Install via Homebrew:</li>
 </ul>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">brew install openssl</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-generate-an-rsa-private-key">1.2 Generate an RSA Private Key<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#12-generate-an-rsa-private-key" class="hash-link" aria-label="Direct link to 1.2 Generate an RSA Private Key" title="Direct link to 1.2 Generate an RSA Private Key">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="12-generate-an-rsa-private-key">1.2 Generate an RSA Private Key<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#12-generate-an-rsa-private-key" class="hash-link" aria-label="Direct link to 1.2 Generate an RSA Private Key" title="Direct link to 1.2 Generate an RSA Private Key">​</a></h3>
 <ul>
 <li><strong>Windows:</strong></li>
 </ul>
@@ -42,22 +42,22 @@
 <li><strong>macOS:</strong></li>
 </ul>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl genrsa -des3 -passout pass:x -out server.pass.key 2048</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-an-unencrypted-key-file">1.3 Create an Unencrypted Key File<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#13-create-an-unencrypted-key-file" class="hash-link" aria-label="Direct link to 1.3 Create an Unencrypted Key File" title="Direct link to 1.3 Create an Unencrypted Key File">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="13-create-an-unencrypted-key-file">1.3 Create an Unencrypted Key File<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#13-create-an-unencrypted-key-file" class="hash-link" aria-label="Direct link to 1.3 Create an Unencrypted Key File" title="Direct link to 1.3 Create an Unencrypted Key File">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl rsa -passin pass:x -in server.pass.key -out server.key</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="14-generate-a-certificate-signing-request-csr">1.4 Generate a Certificate Signing Request (CSR)<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#14-generate-a-certificate-signing-request-csr" class="hash-link" aria-label="Direct link to 1.4 Generate a Certificate Signing Request (CSR)" title="Direct link to 1.4 Generate a Certificate Signing Request (CSR)">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="14-generate-a-certificate-signing-request-csr">1.4 Generate a Certificate Signing Request (CSR)<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#14-generate-a-certificate-signing-request-csr" class="hash-link" aria-label="Direct link to 1.4 Generate a Certificate Signing Request (CSR)" title="Direct link to 1.4 Generate a Certificate Signing Request (CSR)">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl req -new -key server.key -out server.csr</span><br></span></code></pre></div></div>
 <p>You will be prompted for organization details. Fill them as appropriate.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="15-generate-the-self-signed-certificate">1.5 Generate the Self-Signed Certificate<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#15-generate-the-self-signed-certificate" class="hash-link" aria-label="Direct link to 1.5 Generate the Self-Signed Certificate" title="Direct link to 1.5 Generate the Self-Signed Certificate">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="15-generate-the-self-signed-certificate">1.5 Generate the Self-Signed Certificate<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#15-generate-the-self-signed-certificate" class="hash-link" aria-label="Direct link to 1.5 Generate the Self-Signed Certificate" title="Direct link to 1.5 Generate the Self-Signed Certificate">​</a></h3>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">openssl x509 -req -sha256 -days 365 -in server.csr -signkey server.key -out server.crt</span><br></span></code></pre></div></div>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The <code>server.key</code> (private key) and <code>server.crt</code> (certificate) files are required for the next steps. Keep your private key secure.</p></div></div>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-create-a-jwt-connected-app-in-salesforce">Step 2: Create a JWT Connected App in Salesforce<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-2-create-a-jwt-connected-app-in-salesforce" class="hash-link" aria-label="Direct link to Step 2: Create a JWT Connected App in Salesforce" title="Direct link to Step 2: Create a JWT Connected App in Salesforce">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="21-navigate-to-setup">2.1 Navigate to Setup<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#21-navigate-to-setup" class="hash-link" aria-label="Direct link to 2.1 Navigate to Setup" title="Direct link to 2.1 Navigate to Setup">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-create-a-jwt-connected-app-in-salesforce">Step 2: Create a JWT Connected App in Salesforce<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-2-create-a-jwt-connected-app-in-salesforce" class="hash-link" aria-label="Direct link to Step 2: Create a JWT Connected App in Salesforce" title="Direct link to Step 2: Create a JWT Connected App in Salesforce">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="21-navigate-to-setup">2.1 Navigate to Setup<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#21-navigate-to-setup" class="hash-link" aria-label="Direct link to 2.1 Navigate to Setup" title="Direct link to 2.1 Navigate to Setup">​</a></h3>
 <ol>
 <li>Log in to Salesforce.</li>
 <li>Click the gear icon and select <strong>Setup</strong>.</li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="22-create-a-new-connected-app">2.2 Create a New Connected App<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#22-create-a-new-connected-app" class="hash-link" aria-label="Direct link to 2.2 Create a New Connected App" title="Direct link to 2.2 Create a New Connected App">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="22-create-a-new-connected-app">2.2 Create a New Connected App<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#22-create-a-new-connected-app" class="hash-link" aria-label="Direct link to 2.2 Create a New Connected App" title="Direct link to 2.2 Create a New Connected App">​</a></h3>
 <ol>
 <li>In the Quick Find box, search for <strong>App Manager</strong> and open it.</li>
 <li>Click <strong>New Connected App</strong>.</li>
@@ -84,12 +84,12 @@
 <li>Click <strong>Save</strong>.</li>
 </ol>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>After saving, Salesforce may take a few minutes to propagate your Connected App settings.</p></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="23-note-client-id-and-secret">2.3 Note Client ID and Secret<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#23-note-client-id-and-secret" class="hash-link" aria-label="Direct link to 2.3 Note Client ID and Secret" title="Direct link to 2.3 Note Client ID and Secret">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="23-note-client-id-and-secret">2.3 Note Client ID and Secret<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#23-note-client-id-and-secret" class="hash-link" aria-label="Direct link to 2.3 Note Client ID and Secret" title="Direct link to 2.3 Note Client ID and Secret">​</a></h3>
 <ul>
 <li>After saving, copy the <strong>Consumer Key</strong> (Client ID) and <strong>Consumer Secret</strong> from the app detail page.</li>
 </ul>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3-approve-the-connected-app">Step 3: Approve the Connected App<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-3-approve-the-connected-app" class="hash-link" aria-label="Direct link to Step 3: Approve the Connected App" title="Direct link to Step 3: Approve the Connected App">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3-approve-the-connected-app">Step 3: Approve the Connected App<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-3-approve-the-connected-app" class="hash-link" aria-label="Direct link to Step 3: Approve the Connected App" title="Direct link to Step 3: Approve the Connected App">​</a></h2>
 <ol>
 <li>In <strong>Setup</strong>, search for <strong>Manage Connected Apps</strong>.</li>
 <li>Click on your Connected App.</li>
@@ -99,8 +99,8 @@
 </ol>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>If this step is skipped, authentication requests may fail with insufficient permissions.</p></div></div>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-create-a-jwt-token">Step 4: Create a JWT Token<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-4-create-a-jwt-token" class="hash-link" aria-label="Direct link to Step 4: Create a JWT Token" title="Direct link to Step 4: Create a JWT Token">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-structure-the-jwt">4.1 Structure the JWT<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#41-structure-the-jwt" class="hash-link" aria-label="Direct link to 4.1 Structure the JWT" title="Direct link to 4.1 Structure the JWT">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-create-a-jwt-token">Step 4: Create a JWT Token<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-4-create-a-jwt-token" class="hash-link" aria-label="Direct link to Step 4: Create a JWT Token" title="Direct link to Step 4: Create a JWT Token">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="41-structure-the-jwt">4.1 Structure the JWT<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#41-structure-the-jwt" class="hash-link" aria-label="Direct link to 4.1 Structure the JWT" title="Direct link to 4.1 Structure the JWT">​</a></h3>
 <p>A JWT consists of three parts: Header, Payload, and Signature.</p>
 <ul>
 <li>
@@ -120,8 +120,8 @@
 </ul>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You can use <a href="https://jwt.io/" target="_blank" rel="noopener noreferrer">jwt.io</a> to construct and sign your JWT. Use your <code>server.key</code> as the private key.</p></div></div>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-5-obtain-an-access-token-using-postman">Step 5: Obtain an Access Token Using Postman<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-5-obtain-an-access-token-using-postman" class="hash-link" aria-label="Direct link to Step 5: Obtain an Access Token Using Postman" title="Direct link to Step 5: Obtain an Access Token Using Postman">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="51-configure-the-request">5.1 Configure the Request<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#51-configure-the-request" class="hash-link" aria-label="Direct link to 5.1 Configure the Request" title="Direct link to 5.1 Configure the Request">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-5-obtain-an-access-token-using-postman">Step 5: Obtain an Access Token Using Postman<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-5-obtain-an-access-token-using-postman" class="hash-link" aria-label="Direct link to Step 5: Obtain an Access Token Using Postman" title="Direct link to Step 5: Obtain an Access Token Using Postman">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="51-configure-the-request">5.1 Configure the Request<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#51-configure-the-request" class="hash-link" aria-label="Direct link to 5.1 Configure the Request" title="Direct link to 5.1 Configure the Request">​</a></h3>
 <ol>
 <li>
 <p>Open Postman and create a new <strong>POST</strong> request.</p>
@@ -131,7 +131,7 @@
 <div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">https://login.salesforce.com/services/oauth2/token</span><br></span></code></pre></div></div>
 </li>
 </ol>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="52-set-up-the-body">5.2 Set Up the Body<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#52-set-up-the-body" class="hash-link" aria-label="Direct link to 5.2 Set Up the Body" title="Direct link to 5.2 Set Up the Body">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="52-set-up-the-body">5.2 Set Up the Body<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#52-set-up-the-body" class="hash-link" aria-label="Direct link to 5.2 Set Up the Body" title="Direct link to 5.2 Set Up the Body">​</a></h3>
 <ul>
 <li>
 <p>Select <strong>x-www-form-urlencoded</strong>.</p>
@@ -141,16 +141,16 @@
 <table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td>grant_type</td><td>urn:ietf:params:oauth:grant-type<!-- -->:jwt-bearer</td></tr><tr><td>assertion</td><td>(Paste your generated JWT token here)</td></tr></tbody></table>
 </li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="53-send-the-request">5.3 Send the Request<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#53-send-the-request" class="hash-link" aria-label="Direct link to 5.3 Send the Request" title="Direct link to 5.3 Send the Request">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="53-send-the-request">5.3 Send the Request<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#53-send-the-request" class="hash-link" aria-label="Direct link to 5.3 Send the Request" title="Direct link to 5.3 Send the Request">​</a></h3>
 <ul>
 <li>Click <strong>Send</strong>.</li>
 <li>If successful, you'll receive a JSON response containing an <code>access_token</code>.</li>
 </ul>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>If you receive an error, double-check your JWT structure, signature, and ensure the Connected App is properly configured and approved.</p></div></div>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-6-use-the-access-token">Step 6: Use the Access Token<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#step-6-use-the-access-token" class="hash-link" aria-label="Direct link to Step 6: Use the Access Token" title="Direct link to Step 6: Use the Access Token">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-6-use-the-access-token">Step 6: Use the Access Token<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#step-6-use-the-access-token" class="hash-link" aria-label="Direct link to Step 6: Use the Access Token" title="Direct link to Step 6: Use the Access Token">​</a></h2>
 <p>With the access token, you can now make authenticated API requests to Salesforce.</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="61-example-fetch-accounts">6.1 Example: Fetch Accounts<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#61-example-fetch-accounts" class="hash-link" aria-label="Direct link to 6.1 Example: Fetch Accounts" title="Direct link to 6.1 Example: Fetch Accounts">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="61-example-fetch-accounts">6.1 Example: Fetch Accounts<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#61-example-fetch-accounts" class="hash-link" aria-label="Direct link to 6.1 Example: Fetch Accounts" title="Direct link to 6.1 Example: Fetch Accounts">​</a></h3>
 <ol>
 <li>
 <p>Create a new <strong>GET</strong> request in Postman.</p>
@@ -169,7 +169,7 @@
 </li>
 </ol>
 <hr>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://bigowl.info/blog/authorization-flows/jwt-authorization-flows#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://bigowl.info/%20/my-docs/blog/authorization-flows/jwt-authorization-flows#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
 <p>You have now set up secure, server-to-server integration with Salesforce using the JWT Bearer Flow. This approach is ideal for backend services and automated integrations, providing robust security without requiring user interaction. If you encounter issues, review each step carefully and consult Salesforce documentation for troubleshooting.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>For production deployments, always safeguard your private keys and restrict access to your Connected App.</p></div></div>]]></content>
         <author>

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbigowl_site=self.webpackChunkbigowl_site||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"JWT Bearer Flow in Salesforce","permalink":"/blog/authorization-flows/jwt-authorization-flows","unlisted":false,"date":"2025-05-29T20:05:35.000Z"}]}')}}]);
